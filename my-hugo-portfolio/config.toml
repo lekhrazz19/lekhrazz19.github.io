@@ -1,0 +1,37 @@
+baseURL = "https://lekhrazz19.github.io/"
+languageCode = "en-us"
+title = "Lekhrazz"
+theme = "ananke"
+
+[params]
+  author = "Lekhrazz"
+  description = "A passionate web developer with a knack for creating elegant and responsive websites."
+  favicon = "images/favicon.png"
+  [params.social]
+    linkedin = "https://www.linkedin.com/in/lekhrazz/"
+    github = "https://github.com/lekhrazz19/"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+
+[build]
+  writeStats = true
+
+[pagination]
+  pagerSize = 10
+
+[permalinks]
+  post = "/posts/:year/:month/:day/:slug/"
