@@ -1,0 +1,16 @@
+baseURL = "https://lekhrazz19.github.io/"
+languageCode = "en-us"
+title = "Lekhrazz | Web3 Security & Cybersecurity"
+enableRobotsTXT = true
+paginate = 10
+
+[params]
+  author = "Lekhrazz"
+  description = "Web3 Security and Cybersecurity portfolio"
+  avatar = "https://github.com/lekhrazz19.png"
+  linkedin = "https://www.linkedin.com/in/lekhrazz/"
+  github = "https://github.com/lekhrazz19"
+  email = "contact@example.com"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

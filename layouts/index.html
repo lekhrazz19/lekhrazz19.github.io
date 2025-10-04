@@ -1,0 +1,73 @@
+{{ define "main" }}
+  <section id="home" class="hero reveal">
+    <div class="container grid-2">
+      <div class="hero-text">
+        <h1>Hi, I'm <span class="accent">Lekhrazz</span></h1>
+        <p class="subtitle">Web3 Security and Cybersecurity Enthusiast — analyzing smart contracts, securing dApps, and hardening systems.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">Featured Work</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img class="avatar float" src="{{ site.Params.avatar }}" alt="Profile picture of Lekhrazz" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="reveal">About Me</h2>
+      <p class="reveal">
+        I focus on security in decentralized ecosystems: smart contract auditing, threat modeling for dApps, and blue-team practices across cloud and on‑chain infrastructure. I enjoy building tooling and writing about new attack surfaces in Web3.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="section alt">
+    <div class="container">
+      <h2 class="reveal">Skills</h2>
+      <ul class="chips reveal" aria-label="Skills list">
+        <li>Smart Contract Security</li>
+        <li>Solidity</li>
+        <li>EVM Tooling (Foundry/Hardhat)</li>
+        <li>Threat Modeling</li>
+        <li>Static/Dynamic Analysis</li>
+        <li>Network Security</li>
+        <li>SIEM & Blue Team</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="reveal">Featured Projects</h2>
+      <div class="grid-3 cards">
+        {{ range first 6 (where site.RegularPages "Section" "projects") }}
+          <article class="card reveal">
+            <div class="card-body">
+              <h3>{{ .Title }}</h3>
+              {{ with .Params.summary }}<p>{{ . }}</p>{{ else }}<p>{{ .Summary }}</p>{{ end }}
+            </div>
+            <div class="card-actions">
+              {{ with .Params.demo }}<a class="btn small" href="{{ . }}" target="_blank" rel="noopener">Live</a>{{ end }}
+              {{ with .Params.repo }}<a class="btn small ghost" href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt">
+    <div class="container">
+      <h2 class="reveal">Contact</h2>
+      <p class="reveal">Open to collaborations, security research, and audits.</p>
+      <ul class="contact reveal">
+        <li><a href="mailto:{{ site.Params.email }}">Email</a></li>
+        <li><a target="_blank" rel="noopener" href="{{ site.Params.linkedin }}">LinkedIn</a></li>
+        <li><a target="_blank" rel="noopener" href="{{ site.Params.github }}">GitHub</a></li>
+      </ul>
+    </div>
+  </section>
+{{ end }}
