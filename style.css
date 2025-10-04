@@ -1,14 +1,15 @@
 :root {
-    --bg: #060814;
-    --bg2: #0b1530;
-    --panel: rgba(16, 20, 40, 0.6);
-    --text: #eaf2ff;
-    --muted: #9db0d1;
-    --accent: #00d1ff;      /* neon cyan */
-    --accent2: #7c4dff;     /* neon purple */
-    --card: rgba(10, 14, 28, 0.7);
+    /* Mint + Coral */
+    --bg: #041016;
+    --bg2: #06202a;
+    --panel: rgba(7, 25, 34, 0.6);
+    --text: #ebfffb;
+    --muted: #a6cbc2;
+    --accent: #2ef2c3;      /* mint */
+    --accent2: #ff7b6b;     /* coral */
+    --card: rgba(5, 18, 26, 0.7);
     --border: rgba(255, 255, 255, 0.12);
-    --glow: 0 0 20px rgba(0, 209, 255, 0.35);
+    --glow: 0 0 20px rgba(46, 242, 195, 0.35);
     color-scheme: dark light;
 }
 
@@ -41,7 +42,7 @@ body {
 .logo { color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: .5px; }
 .nav-links { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
 .nav-links a { color: var(--muted); text-decoration: none; padding: .4rem .6rem; border-radius: .4rem; }
-.nav-links a:hover { color: var(--text); background: rgba(124,77,255,.18); box-shadow: var(--glow); }
+.nav-links a:hover { color: var(--text); background: rgba(255,123,107,.18); box-shadow: var(--glow); }
 
 .nav-toggle { display: none; background: none; border: 0; padding: .25rem; cursor: pointer; }
 .nav-toggle .bar { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; border-radius: 2px; }
@@ -52,7 +53,7 @@ body {
     .nav-links.show { display: flex; }
 }
 
-.hero { padding: 6rem 0 4rem; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(124,77,255,.07), rgba(0,0,0,0)); }
+.hero { padding: 6rem 0 4rem; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(255,123,107,.08), rgba(0,0,0,0)); }
 .hero-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .hero { position: relative; }
 .hero-bg svg { width: 120%; height: 120%; transform: translate(-5%, -10%); animation: drift 12s ease-in-out infinite alternate; }
@@ -64,12 +65,12 @@ body {
 .subtitle { color: var(--muted); margin: 0 0 1.5rem; }
 .cta { display: flex; gap: .75rem; }
 
-.btn { appearance: none; border: 1px solid transparent; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #001018; padding: .7rem 1rem; border-radius: .6rem; text-decoration: none; font-weight: 700; box-shadow: 0 6px 24px rgba(0,209,255,.25); }
-.btn:hover { filter: brightness(1.08); box-shadow: 0 6px 30px rgba(124,77,255,.35); }
+.btn { appearance: none; border: 1px solid transparent; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #001018; padding: .7rem 1rem; border-radius: .6rem; text-decoration: none; font-weight: 700; box-shadow: 0 6px 24px rgba(46,242,195,.25); }
+.btn:hover { filter: brightness(1.08); box-shadow: 0 6px 30px rgba(255,123,107,.35); }
 .btn.ghost { background: transparent; color: var(--text); border-color: var(--border); box-shadow: none; }
 .btn.small { padding: .45rem .7rem; font-size: .95rem; }
 
-.avatar { width: 180px; height: 180px; border-radius: 50%; border: 2px solid var(--border); box-shadow: 0 10px 30px rgba(124,77,255,.25), 0 0 0 6px rgba(124,77,255,.08); object-fit: cover; }
+.avatar { width: 180px; height: 180px; border-radius: 50%; border: 2px solid var(--border); box-shadow: 0 10px 30px rgba(255,123,107,.25), 0 0 0 6px rgba(255,123,107,.08); object-fit: cover; }
 .hero-media { display: grid; place-items: center; }
 
 h2 { font-size: 1.6rem; margin: 0 0 1rem; }
@@ -81,7 +82,7 @@ p { margin: 0 0 1rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 @media (max-width: 920px) { .grid-3 { grid-template-columns: 1fr; } }
 .cards .card { background: var(--card); border: 1px solid var(--border); border-radius: .8rem; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
-.cards .card:hover { box-shadow: 0 10px 40px rgba(124,77,255,.35), 0 0 0 1px rgba(255,255,255,.05) inset; }
+.cards .card:hover { box-shadow: 0 10px 40px rgba(255,123,107,.35), 0 0 0 1px rgba(255,255,255,.05) inset; }
 .card-body { padding: 1rem; }
 .card-actions { padding: .85rem 1rem 1rem; display: flex; gap: .5rem; }
 
