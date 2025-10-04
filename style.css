@@ -49,7 +49,7 @@ body {
 
 @media (max-width: 760px) {
     .nav-toggle { display: block; }
-    .nav-links { position: absolute; right: 4%; top: 56px; background: var(--panel); padding: .75rem; border: 1px solid var(--border); border-radius: .6rem; display: none; flex-direction: column; width: 220px; }
+    .nav-links { position: absolute; right: 4%; top: 56px; background: var(--panel); padding: .75rem; border: 1px solid var(--border); border-radius: .6rem; display: none; flex-direction: column; width: min(92vw, 360px); }
     .nav-links.show { display: flex; }
 }
 
@@ -80,7 +80,8 @@ p { margin: 0 0 1rem; }
 .chips li { background: var(--card); color: var(--text); border: 1px solid var(--border); padding: .45rem .65rem; border-radius: .6rem; box-shadow: 0 2px 10px rgba(0,0,0,.2); }
 
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-@media (max-width: 920px) { .grid-3 { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .grid-3 { grid-template-columns: 1fr; } }
 .cards .card { background: var(--card); border: 1px solid var(--border); border-radius: .8rem; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
 .cards .card:hover { box-shadow: 0 10px 40px rgba(255,123,107,.35), 0 0 0 1px rgba(255,255,255,.05) inset; }
 .card-body { padding: 1rem; }
@@ -107,3 +108,20 @@ html { scroll-behavior: smooth; }
 .reveal.in { opacity: 1; transform: translateY(0) scale(1); }
 .float { animation: float 6s ease-in-out infinite; }
 @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-6px); } 100% { transform: translateY(0); } }
+
+/* Focus styles for keyboard users */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn:focus-visible, .nav-links a:focus-visible, .contact a:focus-visible { box-shadow: 0 0 0 3px rgba(46,242,195,.25); }
+
+/* Responsive avatar size */
+@media (max-width: 480px) {
+    .avatar { width: 140px; height: 140px; }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { transition: none; transform: none !important; opacity: 1 !important; }
+    .float { animation: none !important; }
+    .hero-bg svg { animation: none !important; }
+}

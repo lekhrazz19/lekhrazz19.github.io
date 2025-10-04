@@ -7,6 +7,20 @@ if (toggle && links) {
     toggle.setAttribute('aria-expanded', String(!expanded));
     links.classList.toggle('show');
   });
+  // Close on Escape or outside click
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      links.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!links.contains(e.target) && e.target !== toggle) {
+      links.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  }, true);
 }
 
 // Close menu on nav link click (mobile)
@@ -74,3 +88,15 @@ async function loadProjects() {
   }
 }
 loadProjects();
+
+// Smooth scroll offset for header (optional fine-tune)
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href');
+    const el = document.querySelector(id);
+    if (!el) return;
+    e.preventDefault();
+    const y = el.getBoundingClientRect().top + window.scrollY - 10; // tiny offset
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+});
