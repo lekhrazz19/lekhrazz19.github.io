@@ -56,7 +56,19 @@
 
         <main id="main">
             <!-- Hero -->
-                    <section id="home" class="hero reveal">
+                            <section id="home" class="hero reveal">
+                                <div class="hero-bg" aria-hidden="true">
+                                    <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
+                                                <stop offset="0%" stop-color="#00d1ff"/>
+                                                <stop offset="100%" stop-color="#7c4dff"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M0 260 C 150 220 300 320 450 280 C 600 240 750 340 900 300 C 1050 260 1200 320 1200 320 L 1200 400 L 0 400 Z" fill="url(#g)" opacity="0.12"></path>
+                                        <path d="M0 220 C 180 180 360 280 540 240 C 720 200 900 300 1080 260" stroke="url(#g)" stroke-width="2" fill="none" opacity="0.2"></path>
+                                    </svg>
+                                </div>
                 <div class="container grid-2">
                     <div class="hero-text">
                                 <h1>Hi, I'm <span class="accent">Lekhrazz</span></h1>
@@ -99,43 +111,17 @@
             </section>
 
             <!-- Projects -->
-                    <section id="projects" class="section">
+                            <section id="projects" class="section">
                 <div class="container">
-                            <h2 class="reveal">Projects</h2>
-                            <div class="grid-3 cards">
-                                <article class="card reveal">
-                            <div class="card-body">
-                                        <h3>Reentrancy Attack Lab</h3>
-                                        <p>Intentionally vulnerable contracts and harnesses to practice finding and fixing reentrancy bugs.</p>
-                            </div>
-                            <div class="card-actions">
-                                <a class="btn small" href="#" aria-label="Live demo of Project One">Live</a>
-                                <a class="btn small ghost" href="https://github.com/lekhrazz19" aria-label="Source code of Project One on GitHub">Code</a>
-                            </div>
-                        </article>
-
-                                <article class="card reveal">
-                            <div class="card-body">
-                                        <h3>DeFi Audit Template</h3>
-                                        <p>Audit report structure with severity, findings, and practical remediations.</p>
-                            </div>
-                            <div class="card-actions">
-                                <a class="btn small" href="#">Live</a>
-                                <a class="btn small ghost" href="https://github.com/lekhrazz19">Code</a>
-                            </div>
-                        </article>
-
-                                <article class="card reveal">
-                            <div class="card-body">
-                                        <h3>Phishing Detection Playbook</h3>
-                                        <p>Operational guide and scripts for identifying and responding to phishing in Web3 communities.</p>
-                            </div>
-                            <div class="card-actions">
-                                <a class="btn small" href="#">Live</a>
-                                <a class="btn small ghost" href="https://github.com/lekhrazz19">Code</a>
-                            </div>
-                        </article>
-                    </div>
+                                    <h2 class="reveal">Projects</h2>
+                                    <div id="projects-cards" class="grid-3 cards">
+                                        <article class="card reveal" id="projects-skeleton">
+                                            <div class="card-body">
+                                                <h3>Loading projects…</h3>
+                                                <p>Please wait a moment.</p>
+                                            </div>
+                                        </article>
+                                    </div>
                 </div>
             </section>
 

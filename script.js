@@ -35,3 +35,42 @@ if ('IntersectionObserver' in window) {
   // Fallback: show all
   revealEls.forEach(el => el.classList.add('in'));
 }
+
+// Dynamic projects
+async function loadProjects() {
+  const container = document.getElementById('projects-cards');
+  if (!container) return;
+  try {
+    const res = await fetch('projects.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('Failed to load projects');
+    const items = await res.json();
+    container.innerHTML = '';
+    items.forEach((p) => {
+      const art = document.createElement('article');
+      art.className = 'card reveal';
+      art.innerHTML = `
+        <div class="card-body">
+          <h3>${p.title}</h3>
+          <p>${p.summary}</p>
+        </div>
+        <div class="card-actions">
+          ${p.demo ? `<a class="btn small" target="_blank" rel="noopener" href="${p.demo}">Live</a>` : ''}
+          ${p.repo ? `<a class="btn small ghost" target="_blank" rel="noopener" href="${p.repo}">Code</a>` : ''}
+        </div>
+      `;
+      container.appendChild(art);
+    });
+    // Ensure newly added elements animate
+    document.querySelectorAll('#projects-cards .reveal').forEach(el => {
+      if (typeof IntersectionObserver === 'undefined') {
+        el.classList.add('in');
+      } else {
+        const entry = { isIntersecting: true, target: el };
+        el.classList.add('in');
+      }
+    });
+  } catch (e) {
+    console.error(e);
+  }
+}
+loadProjects();

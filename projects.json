@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Reentrancy Attack Lab",
+    "summary": "Intentionally vulnerable contracts and harnesses to practice finding and fixing reentrancy bugs.",
+    "demo": "#",
+    "repo": "https://github.com/lekhrazz19"
+  },
+  {
+    "title": "DeFi Audit Template",
+    "summary": "Audit report structure with severity, findings, and practical remediations.",
+    "demo": "#",
+    "repo": "https://github.com/lekhrazz19"
+  },
+  {
+    "title": "Phishing Detection Playbook",
+    "summary": "Operational guide and scripts for identifying and responding to phishing in Web3 communities.",
+    "demo": "#",
+    "repo": "https://github.com/lekhrazz19"
+  }
+]
