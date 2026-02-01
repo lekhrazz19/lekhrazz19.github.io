@@ -1,0 +1,23 @@
+{
+  "name": "lekhraj-singh-portfolio",
+  "version": "1.0.0",
+  "description": "Cybersecurity researcher and penetration tester portfolio with Three.js",
+  "homepage": "https://lekhrazz19.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lekhrazz19/lekhrazz19.github.io.git"
+  },
+  "scripts": {
+    "start": "http-server",
+    "deploy": "git push origin main"
+  },
+  "keywords": [
+    "cybersecurity",
+    "penetration-testing",
+    "bug-bounty",
+    "portfolio",
+    "security-research"
+  ],
+  "author": "Lekhraj Singh",
+  "license": "MIT"
+}
