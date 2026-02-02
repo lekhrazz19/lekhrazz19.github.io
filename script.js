@@ -123,6 +123,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===========================
+// Spotlight Background Tracking
+// ===========================
+document.addEventListener('mousemove', (event) => {
+    const x = (event.clientX / window.innerWidth) * 100;
+    const y = (event.clientY / window.innerHeight) * 100;
+    document.body.style.setProperty('--spot-x', `${x}%`);
+    document.body.style.setProperty('--spot-y', `${y}%`);
+});
+
+// ===========================
 // Scroll Animations
 // ===========================
 const observerOptions = {
