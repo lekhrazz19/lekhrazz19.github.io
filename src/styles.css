@@ -1161,38 +1161,141 @@ section {
 }
 
 .contact-form {
-    background: var(--bg-card);
-    padding: 40px;
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
+    background: linear-gradient(135deg, rgba(26, 31, 47, 0.9), rgba(15, 22, 36, 0.95));
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
     transform-style: preserve-3d;
     will-change: transform;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 
+                0 0 40px rgba(0, 212, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+    animation: formGlow 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.contact-form::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    animation: formShine 3s infinite;
+}
+
+.contact-form:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 
+                0 0 60px rgba(0, 212, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+@keyframes formGlow {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(10%, 10%) rotate(180deg);
+    }
+}
+
+@keyframes formShine {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    position: relative;
 }
 
 .form-input {
     width: 100%;
-    padding: 16px 20px;
-    background: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
+    padding: 18px 20px;
+    background: rgba(10, 15, 28, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     color: var(--text-primary);
-    font-family: 'Manrope', sans-serif;
-    font-size: 15px;
-    transition: all 0.3s;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    backdrop-filter: blur(5px);
 }
 
 .form-input:focus {
     outline: none;
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    background: rgba(10, 15, 28, 0.8);
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15),
+                0 8px 25px rgba(0, 212, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.form-input:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.1);
 }
 
 .form-input::placeholder {
     color: var(--text-muted);
+    transition: all 0.3s;
+}
+
+.form-input:focus::placeholder {
+    opacity: 0.5;
+    transform: translateX(5px);
+}
+
+input.form-input,
+textarea.form-input {
+    font-weight: 500;
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Animated focus ring */
+.form-input::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.form-input:focus::before {
+    opacity: 1;
 }
 
 /* ===========================
