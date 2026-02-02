@@ -26,7 +26,7 @@ html {
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
@@ -295,7 +295,7 @@ body {
 }
 
 .stat-value {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 40px;
     font-weight: 700;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary), var(--accent-secondary));
@@ -373,7 +373,7 @@ section {
 }
 
 .section-title {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 20px;
