@@ -771,9 +771,6 @@ section {
     height: 2px;
     background: linear-gradient(90deg, var(--accent-primary), transparent);
 }
-    position: relative;
-    overflow: hidden;
-}
 
 .timeline-item:hover {
     border-color: var(--accent-primary);
