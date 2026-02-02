@@ -322,8 +322,7 @@ const Doodles = {
 export default function App() {
   return (
     <div className="app">
-      {/* Custom Cursor */}
-      <CustomCursor />
+
 
       {/* Background Elements */}
       <div className="bg-noise"></div>
