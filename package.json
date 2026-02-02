@@ -1,15 +1,18 @@
 {
   "name": "lekhraj-singh-portfolio",
   "version": "1.0.0",
-  "description": "Cybersecurity researcher and penetration tester portfolio with Three.js",
+  "description": "Cybersecurity researcher and penetration tester portfolio with React + Vite",
   "homepage": "https://lekhrazz19.github.io",
+  "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lekhrazz19/lekhrazz19.github.io.git"
+    "url": "git+https://github.com/lekhrazz19/lekhrazz19.github.io.git"
   },
   "scripts": {
-    "start": "http-server",
-    "deploy": "git push origin main"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && git add dist && git commit -m 'Deploy' && git push origin main"
   },
   "keywords": [
     "cybersecurity",
@@ -19,5 +22,16 @@
     "security-research"
   ],
   "author": "Lekhraj Singh",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lekhrazz19/lekhrazz19.github.io/issues"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.3"
+  }
 }
