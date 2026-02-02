@@ -31,16 +31,78 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
-    background-image:
-        radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 20%), rgba(124, 58, 237, 0.16), transparent 45%),
-        radial-gradient(500px circle at 80% 30%, rgba(6, 182, 212, 0.14), transparent 40%),
-        radial-gradient(380px circle at 20% 70%, rgba(0, 212, 255, 0.08), transparent 40%);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(0deg, transparent 24%, rgba(0, 212, 255, 0.05) 25%, rgba(0, 212, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 212, 255, 0.05) 75%, rgba(0, 212, 255, 0.05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 212, 255, 0.05) 25%, rgba(0, 212, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 212, 255, 0.05) 75%, rgba(0, 212, 255, 0.05) 76%, transparent 77%, transparent);
+    background-size: 60px 60px, 60px 60px;
+    background-position: 0 0, 30px 30px;
+    animation: gridShift 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes gridShift {
+    0% {
+        background-position: 0 0, 30px 30px;
+    }
+    100% {
+        background-position: 60px 60px, 90px 90px;
+    }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(124, 58, 237, 0.12) 0%, transparent 25%),
+        radial-gradient(circle at 60% 10%, rgba(6, 182, 212, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 28%);
+    background-size: 400% 400%, 400% 400%, 400% 400%, 400% 400%;
+    animation: orbFloat 25s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+@keyframes orbFloat {
+    0% {
+        background-position: 0% 50%, 0% 50%, 0% 50%, 0% 50%;
+    }
+    25% {
+        background-position: 50% 100%, 100% 50%, 50% 0%, 100% 100%;
+    }
+    50% {
+        background-position: 100% 50%, 50% 100%, 100% 50%, 50% 0%;
+    }
+    75% {
+        background-position: 50% 0%, 0% 50%, 50% 100%, 0% 50%;
+    }
+    100% {
+        background-position: 0% 50%, 0% 50%, 0% 50%, 0% 50%;
+    }
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* ===========================
@@ -352,6 +414,8 @@ body {
    =========================== */
 section {
     padding: 100px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .section-header {
@@ -501,6 +565,30 @@ section {
     will-change: transform;
     position: relative;
     overflow: hidden;
+}
+
+/* ===========================
+   3D Card Layers (Aceternity-style)
+   =========================== */
+.card-3d {
+    transform-style: preserve-3d;
+}
+
+.card-3d > * {
+    transform: translateZ(24px);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-3d:hover > * {
+    transform: translateZ(36px);
+}
+
+.card-3d img {
+    transform: translateZ(48px);
+}
+
+.card-3d:hover img {
+    filter: drop-shadow(0 18px 30px rgba(0, 212, 255, 0.25));
 }
 
 .glow-card::before {
@@ -1368,9 +1456,211 @@ section {
     }
 }
 
+.about.scroll-animate .skills-grid {
+    animation: skillsStagger 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.skills-grid.scroll-animate .skill-item {
+    animation: skillReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+.skills-grid.scroll-animate .skill-item:nth-child(1) { animation-delay: 0s; }
+.skills-grid.scroll-animate .skill-item:nth-child(2) { animation-delay: 0.1s; }
+.skills-grid.scroll-animate .skill-item:nth-child(3) { animation-delay: 0.2s; }
+.skills-grid.scroll-animate .skill-item:nth-child(4) { animation-delay: 0.1s; }
+.skills-grid.scroll-animate .skill-item:nth-child(5) { animation-delay: 0.2s; }
+.skills-grid.scroll-animate .skill-item:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes skillReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes skillsStagger {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.about.scroll-animate .image-wrapper {
+    animation: imageFloat 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes imageFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* ===========================
-   Responsive Design
+   Scroll Animations - Section Specific
    =========================== */
+
+/* Hero Section - Parallax fade effect */
+.hero.scroll-animate {
+    animation: heroParallax 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes heroParallax {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scaleY(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+/* About Section - Slide in from sides */
+.about.scroll-animate .about-content {
+    animation: slideInAbout 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes slideInAbout {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Services Section - Staggered bounce effect */
+.services-grid.scroll-animate .service-card {
+    animation: serviceBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+.services-grid.scroll-animate .service-card:nth-child(1) { animation-delay: 0s; }
+.services-grid.scroll-animate .service-card:nth-child(2) { animation-delay: 0.15s; }
+.services-grid.scroll-animate .service-card:nth-child(3) { animation-delay: 0.3s; }
+.services-grid.scroll-animate .service-card:nth-child(4) { animation-delay: 0.15s; }
+.services-grid.scroll-animate .service-card:nth-child(5) { animation-delay: 0.3s; }
+.services-grid.scroll-animate .service-card:nth-child(6) { animation-delay: 0.45s; }
+
+@keyframes serviceBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+    70% {
+        transform: translateY(-8px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Portfolio Section - 3D flip effect */
+.portfolio-grid.scroll-animate .portfolio-card {
+    animation: portfolioFlip 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+.portfolio-grid.scroll-animate .portfolio-card:nth-child(1) { animation-delay: 0s; }
+.portfolio-grid.scroll-animate .portfolio-card:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes portfolioFlip {
+    0% {
+        opacity: 0;
+        transform: perspective(800px) rotateX(90deg) rotateY(20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(800px) rotateX(0) rotateY(0);
+    }
+}
+
+/* Blogs Section - Scale and fade effect */
+.blogs-grid.scroll-animate .blog-card {
+    animation: blogScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+.blogs-grid.scroll-animate .blog-card:nth-child(1) { animation-delay: 0s; }
+.blogs-grid.scroll-animate .blog-card:nth-child(2) { animation-delay: 0.15s; }
+.blogs-grid.scroll-animate .blog-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes blogScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Experience Section - Timeline reveal from bottom */
+.timeline.scroll-animate .timeline-item {
+    animation: timelineReveal 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+.timeline.scroll-animate .timeline-item:nth-child(1) { animation-delay: 0s; }
+.timeline.scroll-animate .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes timelineReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) rotateX(20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+/* Contact Section - Rise and glow effect */
+.contact.scroll-animate {
+    animation: contactRise 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes contactRise {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Responsive animations */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    .scroll-animate * {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
 @media (max-width: 968px) {
     .hero-title {
         font-size: 56px;

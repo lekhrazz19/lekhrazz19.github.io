@@ -123,39 +123,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===========================
-// Spotlight Background Tracking
-// ===========================
-document.addEventListener('mousemove', (event) => {
-    const x = (event.clientX / window.innerWidth) * 100;
-    const y = (event.clientY / window.innerHeight) * 100;
-    document.body.style.setProperty('--spot-x', `${x}%`);
-    document.body.style.setProperty('--spot-y', `${y}%`);
-});
-
-// ===========================
-// Scroll Animations
-// ===========================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+// Navbar Scroll Effect
+const scrollAnimationOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('scroll-animate');
+            // Don't unobserve to allow re-triggering on scroll back up
         }
     });
-}, observerOptions);
+}, scrollAnimationOptions);
 
-// Observe all sections and cards
-document.querySelectorAll('section, .service-card, .portfolio-card, .timeline-item, .cert-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(el);
-});
+// Observe hero section
+const hero = document.querySelector('.hero');
+if (hero) {
+    scrollObserver.observe(hero);
+}
+
+// Observe about section
+const about = document.querySelector('.about');
+if (about) {
+    scrollObserver.observe(about);
+    const skillsGrid = about.querySelector('.skills-grid');
+    if (skillsGrid) {
+        scrollObserver.observe(skillsGrid);
+    }
+    const imageWrapper = about.querySelector('.image-wrapper');
+    if (imageWrapper) {
+        scrollObserver.observe(imageWrapper);
+    }
+}
+
+// Observe services grid
+const servicesGrid = document.querySelector('.services-grid');
+if (servicesGrid) {
+    scrollObserver.observe(servicesGrid);
+}
+
+// Observe portfolio grid
+const portfolioGrid = document.querySelector('.portfolio-grid');
+if (portfolioGrid) {
+    scrollObserver.observe(portfolioGrid);
+}
+
+// Observe blogs grid
+const blogsGrid = document.querySelector('.blogs-grid');
+if (blogsGrid) {
+    scrollObserver.observe(blogsGrid);
+}
+
+// Observe timeline
+const timeline = document.querySelector('.timeline');
+if (timeline) {
+    scrollObserver.observe(timeline);
+}
+
+// Observe contact section
+const contact = document.querySelector('.contact');
+if (contact) {
+    scrollObserver.observe(contact);
+}
 
 // ===========================
 // Navbar Scroll Effect
@@ -360,7 +391,12 @@ document.querySelectorAll('.stat-value').forEach(stat => {
 // 3D Tilt Interaction (Premium)
 // ===========================
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const tiltElements = document.querySelectorAll('.service-card, .portfolio-card, .skill-item, .timeline-item, .cert-item, .contact-form');
+const tiltElements = document.querySelectorAll('.service-card, .portfolio-card, .blog-card, .skill-item, .timeline-item, .cert-item, .contact-form');
+
+// Add Aceternity-style 3D layers to all cards
+document.querySelectorAll('.service-card, .portfolio-card, .blog-card, .skill-item, .timeline-item, .cert-item, .contact-form').forEach((card) => {
+    card.classList.add('card-3d');
+});
 
 if (!prefersReducedMotion) {
     tiltElements.forEach((card) => {
