@@ -199,37 +199,99 @@ if (contactForm) {
 }
 
 // ===========================
-// Cursor Follow Effect (Optional)
+// Cursor Follow Effect - Cybersecurity Scanner Style
 // ===========================
 if (window.innerWidth > 768) {
     const cursor = document.createElement('div');
     cursor.classList.add('custom-cursor');
+    const cursorDot = document.createElement('div');
+    cursorDot.classList.add('cursor-dot');
+    cursor.appendChild(cursorDot);
     document.body.appendChild(cursor);
 
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
     });
+
+    // Smooth cursor following animation
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.35;
+        cursorY += (mouseY - cursorY) * 0.35;
+        cursor.style.left = `${cursorX}px`;
+        cursor.style.top = `${cursorY}px`;
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
 
     const style = document.createElement('style');
     style.textContent = `
         .custom-cursor {
             position: fixed;
-            width: 10px;
-            height: 10px;
-            border: 2px solid #00D4FF;
-            border-radius: 50%;
+            width: 24px;
+            height: 24px;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.15s ease;
+            transform: translate(-50%, -50%);
         }
-        .custom-cursor.active {
-            transform: scale(2);
+        
+        .cursor-dot {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #00D4FF;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.6), inset 0 0 10px rgba(0, 212, 255, 0.3);
+            animation: cursorScan 3s linear infinite;
+        }
+        
+        .cursor-dot::before {
+            content: '';
+            position: absolute;
+            inset: 25%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.8), transparent);
+            border-radius: 50%;
+            animation: cursorPulse 1.5s ease-in-out infinite;
+        }
+        
+        .custom-cursor.active .cursor-dot {
+            border-color: #7C3AED;
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.8), inset 0 0 15px rgba(124, 58, 237, 0.4);
+        }
+        
+        @keyframes cursorScan {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes cursorPulse {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .cursor-dot,
+            .cursor-dot::before {
+                animation: none;
+            }
         }
     `;
     document.head.appendChild(style);
 
-    document.querySelectorAll('a, button, .service-card, .portfolio-card').forEach(el => {
+    document.querySelectorAll('a, button, .service-card, .portfolio-card, .blog-card, .skill-item').forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('active'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
     });
