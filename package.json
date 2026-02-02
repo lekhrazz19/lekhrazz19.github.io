@@ -1,46 +1,30 @@
 {
-  "name": "lekhraj-singh-portfolio",
-  "version": "1.0.0",
-  "description": "Cybersecurity researcher and penetration tester portfolio with React + Vite",
-  "homepage": "https://lekhrazz19.github.io",
+  "name": "lekhrazz19.github.io",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lekhrazz19/lekhrazz19.github.io.git"
-  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "npm run build && git add dist && git commit -m 'Deploy' && git push origin main"
-  },
-  "keywords": [
-    "cybersecurity",
-    "penetration-testing",
-    "bug-bounty",
-    "portfolio",
-    "security-research"
-  ],
-  "author": "Lekhraj Singh",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lekhrazz19/lekhrazz19.github.io/issues"
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.5.0",
-    "framer-motion": "^11.18.2",
-    "lucide-react": "^0.563.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "three": "^0.182.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.18",
-    "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.24",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.18",
-    "vite": "^6.0.3"
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
   }
 }
