@@ -318,3 +318,116 @@ if (!prefersReducedMotion) {
         });
     });
 }
+
+// ===========================
+// Aceternity UI Components
+// ===========================
+
+// Spotlight Component - Creates floating spotlight effects
+function initSpotlight() {
+    if (prefersReducedMotion) return;
+    
+    const spotlight1 = document.createElement('div');
+    spotlight1.className = 'spotlight spotlight-primary';
+    spotlight1.style.top = '10%';
+    spotlight1.style.left = '10%';
+    document.body.appendChild(spotlight1);
+
+    const spotlight2 = document.createElement('div');
+    spotlight2.className = 'spotlight spotlight-secondary';
+    spotlight2.style.top = '60%';
+    spotlight2.style.right = '10%';
+    document.body.appendChild(spotlight2);
+
+    document.addEventListener('mousemove', (e) => {
+        spotlight1.style.transform = `translate(${e.clientX - 100}px, ${e.clientY - 100}px)`;
+    });
+}
+
+// Sparkles Effect - Creates floating particles on hover
+function createSparkles(element) {
+    if (prefersReducedMotion) return;
+
+    element.addEventListener('mouseenter', () => {
+        const rect = element.getBoundingClientRect();
+        const sparkleCount = 8;
+
+        for (let i = 0; i < sparkleCount; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.setProperty('--duration', `${2 + Math.random() * 1}s`);
+            element.appendChild(sparkle);
+
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+    });
+}
+
+// Apply sparkles to CTA buttons
+function initSparkles() {
+    const buttons = document.querySelectorAll('.btn-primary');
+    buttons.forEach(btn => createSparkles(btn));
+}
+
+// Enhanced Glowing Effect on Cards
+function initGlowingBorders() {
+    const cards = document.querySelectorAll('.service-card, .portfolio-card, .blog-card');
+    cards.forEach(card => {
+        card.classList.add('glowing-border');
+    });
+}
+
+// Animated Tooltip Helper
+function initTooltips() {
+    const tooltipElements = document.querySelectorAll('[data-tooltip]');
+    tooltipElements.forEach(el => {
+        const tooltipText = el.getAttribute('data-tooltip');
+        const wrapper = document.createElement('span');
+        wrapper.className = 'tooltip-wrapper';
+        
+        const tooltip = document.createElement('span');
+        tooltip.className = 'tooltip-text';
+        tooltip.textContent = tooltipText;
+        
+        el.parentNode.insertBefore(wrapper, el);
+        wrapper.appendChild(el);
+        wrapper.appendChild(tooltip);
+    });
+}
+
+// Ripple Effect on Buttons
+function initRippleEffect() {
+    if (prefersReducedMotion) return;
+
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const rect = button.getBoundingClientRect();
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple-button';
+            ripple.style.position = 'absolute';
+            ripple.style.pointerEvents = 'none';
+            button.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+}
+
+// Pulse Glow on Important CTAs
+function initPulseGlow() {
+    const ctaButtons = document.querySelectorAll('.btn-primary');
+    ctaButtons.forEach(btn => btn.classList.add('pulse-glow'));
+}
+
+// Initialize all Aceternity components
+window.addEventListener('load', () => {
+    initSpotlight();
+    initSparkles();
+    initGlowingBorders();
+    initTooltips();
+    initRippleEffect();
+    initPulseGlow();
+});
