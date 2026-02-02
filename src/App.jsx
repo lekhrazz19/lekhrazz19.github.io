@@ -55,7 +55,7 @@ function StaggerChildren({ children, staggerDelay = 100, className = '' }) {
   );
 }
 
-// Custom Cursor Component
+// Custom Cursor Component - Optimized for 60fps
 function CustomCursor() {
   const cursorRef = useRef(null);
   const cursorDotRef = useRef(null);
@@ -67,43 +67,48 @@ function CustomCursor() {
 
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
+    let rafId = null;
 
     const moveCursor = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+      // Dot follows instantly with transform for GPU acceleration
       if (cursorDot) {
-        cursorDot.style.left = `${mouseX}px`;
-        cursorDot.style.top = `${mouseY}px`;
+        cursorDot.style.transform = `translate3d(${mouseX - 4}px, ${mouseY - 4}px, 0)`;
       }
     };
 
     const animateCursor = () => {
-      cursorX += (mouseX - cursorX) * 0.15;
-      cursorY += (mouseY - cursorY) * 0.15;
+      // Faster lerp factor = more responsive (0.35 vs 0.15)
+      const speed = 0.35;
+      cursorX += (mouseX - cursorX) * speed;
+      cursorY += (mouseY - cursorY) * speed;
+
       if (cursor) {
-        cursor.style.left = `${cursorX}px`;
-        cursor.style.top = `${cursorY}px`;
+        // Use transform3d for GPU acceleration
+        cursor.style.transform = `translate3d(${cursorX - 20}px, ${cursorY - 20}px, 0)`;
       }
-      requestAnimationFrame(animateCursor);
+      rafId = requestAnimationFrame(animateCursor);
     };
 
     const handleMouseEnter = (e) => {
-      if (e.target.matches('a, button, .btn, .social-btn, .nav-link, .project-link, input, textarea')) {
+      if (e.target.matches('a, button, .btn, .social-btn, .nav-link, .project-link, input, textarea, .skill-card, .feature-card, .project-card')) {
         setIsHovering(true);
       }
     };
 
     const handleMouseLeave = () => setIsHovering(false);
 
-    document.addEventListener('mousemove', moveCursor);
+    document.addEventListener('mousemove', moveCursor, { passive: true });
     document.addEventListener('mouseover', handleMouseEnter);
     document.addEventListener('mouseout', handleMouseLeave);
-    animateCursor();
+    rafId = requestAnimationFrame(animateCursor);
 
     return () => {
       document.removeEventListener('mousemove', moveCursor);
       document.removeEventListener('mouseover', handleMouseEnter);
       document.removeEventListener('mouseout', handleMouseLeave);
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 
