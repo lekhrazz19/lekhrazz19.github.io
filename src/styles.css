@@ -1161,31 +1161,46 @@ section {
 }
 
 .contact-form {
-    background: linear-gradient(135deg, rgba(26, 31, 47, 0.9), rgba(15, 22, 36, 0.95));
-    backdrop-filter: blur(10px);
-    padding: 50px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    background: linear-gradient(135deg, rgba(26, 31, 47, 0.95), rgba(15, 22, 36, 0.98));
+    backdrop-filter: blur(20px);
+    padding: 60px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
     transform-style: preserve-3d;
-    will-change: transform;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 
-                0 0 40px rgba(0, 212, 255, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 
+                0 0 60px rgba(0, 212, 255, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-form::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
-    animation: formGlow 8s ease-in-out infinite;
-    pointer-events: none;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--accent-primary), 
+        var(--accent-secondary), 
+        var(--accent-tertiary),
+        var(--accent-primary)
+    );
+    border-radius: 24px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s;
+    animation: borderGlow 4s linear infinite;
+    background-size: 300% 300%;
+}
+
+.contact-form:hover::before {
+    opacity: 0.5;
+    filter: blur(20px);
 }
 
 .contact-form::after {
@@ -1193,109 +1208,179 @@ section {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
+    width: 50%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-    animation: formShine 3s infinite;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    animation: formShimmer 3s infinite;
 }
 
-.contact-form:hover {
-    border-color: rgba(0, 212, 255, 0.4);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 
-                0 0 60px rgba(0, 212, 255, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
-@keyframes formGlow {
-    0%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    50% {
-        transform: translate(10%, 10%) rotate(180deg);
-    }
+@keyframes formShimmer {
+    0% { left: -100%; }
+    100% { left: 200%; }
 }
 
-@keyframes formShine {
-    0% {
-        left: -100%;
-    }
-    50%, 100% {
-        left: 100%;
-    }
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.form-header h3 {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 25px;
 }
 
 .form-group {
-    margin-bottom: 25px;
     position: relative;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    transition: all 0.3s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.form-group.full-width .input-icon {
+    top: 24px;
+    transform: none;
+}
+
+.form-label {
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 0 8px;
+    opacity: 0;
+}
+
+.form-group.full-width .form-label {
+    top: 24px;
+    transform: none;
 }
 
 .form-input {
     width: 100%;
-    padding: 18px 20px;
-    background: rgba(10, 15, 28, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    padding: 20px 20px 20px 52px;
+    background: rgba(10, 15, 28, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
     color: var(--text-primary);
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
+    font-weight: 500;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
     position: relative;
-    backdrop-filter: blur(5px);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 140px;
+    padding-top: 20px;
 }
 
 .form-input:focus {
     outline: none;
     border-color: var(--accent-primary);
-    background: rgba(10, 15, 28, 0.8);
+    background: rgba(10, 15, 28, 0.9);
     box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15),
-                0 8px 25px rgba(0, 212, 255, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+                0 10px 30px rgba(0, 212, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+    padding-left: 52px;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    top: -12px;
+    left: 48px;
+    font-size: 12px;
+    color: var(--accent-primary);
+    background: var(--bg-card);
+    opacity: 1;
+    font-weight: 600;
+}
+
+.form-input:focus ~ .input-icon {
+    color: var(--accent-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.form-group.full-width .form-input:focus ~ .input-icon {
+    transform: scale(1.1);
+}
+
+.form-input::placeholder {
+    color: transparent;
 }
 
 .form-input:hover {
     border-color: rgba(0, 212, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.1);
 }
 
-.form-input::placeholder {
+.btn-block {
+    width: 100%;
+    justify-content: center;
+    padding: 20px 40px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.btn-block span {
+    margin-right: 10px;
+}
+
+.form-footer {
+    text-align: center;
     color: var(--text-muted);
-    transition: all 0.3s;
+    font-size: 13px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.form-input:focus::placeholder {
-    opacity: 0.5;
-    transform: translateX(5px);
-}
-
-input.form-input,
-textarea.form-input {
-    font-weight: 500;
-}
-
-textarea.form-input {
-    resize: vertical;
-    min-height: 120px;
-}
-
-/* Animated focus ring */
-.form-input::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: 12px;
-    padding: 2px;
-    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s;
-}
-
-.form-input:focus::before {
-    opacity: 1;
+.form-footer::before {
+    content: '🔒';
 }
 
 /* ===========================

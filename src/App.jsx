@@ -605,10 +605,49 @@ function App() {
           </div>
           <div className="contact-content">
             <form className="contact-form">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <textarea placeholder="Your Message" rows="5" required></textarea>
-              <button type="submit" className="btn btn-primary">Send Message</button>
+              <div className="form-header">
+                <h3>Send me a message</h3>
+                <p>I'll get back to you within 24 hours</p>
+              </div>
+              <div className="form-grid">
+                <div className="form-group">
+                  <div className="input-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                      <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                  </div>
+                  <input type="text" className="form-input" placeholder="Full Name" required />
+                  <label className="form-label">Full Name</label>
+                </div>
+                <div className="form-group">
+                  <div className="input-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </div>
+                  <input type="email" className="form-input" placeholder="Email Address" required />
+                  <label className="form-label">Email Address</label>
+                </div>
+              </div>
+              <div className="form-group full-width">
+                <div className="input-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+                <textarea className="form-input" placeholder="Your message..." rows="6" required></textarea>
+                <label className="form-label">Your Message</label>
+              </div>
+              <button type="submit" className="btn btn-primary btn-block">
+                <span>Send Message</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+              <p className="form-footer">Your information is secure and will never be shared.</p>
             </form>
             <div className="contact-info">
               <p>Email: singhlekhraj497@gmail.com</p>
