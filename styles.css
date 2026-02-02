@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
@@ -75,7 +75,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: var(--text-primary);
@@ -183,7 +183,7 @@ body {
 }
 
 .hero-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 72px;
     font-weight: 700;
     line-height: 1.1;
@@ -341,7 +341,7 @@ section {
 }
 
 .section-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -817,6 +817,16 @@ section {
     font-size: 16px;
     color: var(--text-secondary);
     margin-bottom: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.company-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.35));
 }
 
 .timeline-desc {
@@ -894,7 +904,7 @@ section {
 }
 
 .contact-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -965,7 +975,7 @@ section {
     border: 1px solid var(--border-color);
     border-radius: 10px;
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 15px;
     transition: all 0.3s;
 }
