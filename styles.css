@@ -716,6 +716,22 @@ section {
     margin: 0 auto 60px;
 }
 
+.timeline.flow {
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline.flow::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(0, 212, 255, 0.8), rgba(0, 153, 255, 0.1));
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
 .timeline-item {
     display: flex;
     gap: 30px;
@@ -727,6 +743,34 @@ section {
     transition: all 0.3s;
     transform-style: preserve-3d;
     will-change: transform;
+    position: relative;
+}
+
+.timeline.flow .timeline-item {
+    margin-left: 20px;
+}
+
+.timeline.flow .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 36px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.8);
+}
+
+.timeline.flow .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 42px;
+    width: 16px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-primary), transparent);
+}
     position: relative;
     overflow: hidden;
 }
@@ -746,6 +790,8 @@ section {
     background: rgba(0, 212, 255, 0.12);
     color: var(--accent-primary);
     box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.25);
+    position: relative;
+    z-index: 1;
 }
 
 .timeline-content {
