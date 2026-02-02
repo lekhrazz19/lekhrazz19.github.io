@@ -1,68 +1,229 @@
+/* ========================================
+   LEKHRAJ SINGH - PREMIUM DARK PORTFOLIO
+   Design System: "Void & Glass"
+   ======================================== */
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Core Palette - Deep Space */
+  --bg-dark: #030014;
+  --bg-card: rgba(15, 12, 41, 0.6);
+  --bg-glass: rgba(255, 255, 255, 0.03);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Accents - Cosmic Gradients */
+  --primary: #7042f88b;
+  --secondary: #00d4ff;
+  --accent: #a315ff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-dim: #6b6b6b;
+
+  /* Functional */
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(112, 66, 248, 0.5);
+  --shadow-glow: 0 0 20px rgba(112, 66, 248, 0.3);
+
+  /* Typography */
+  --font-main: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  background-color: var(--bg-dark);
+  background-image:
+    radial-gradient(circle at 50% 0%, #1a1444 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, #150b3e 0%, transparent 30%);
+  color: var(--text-primary);
+  font-family: var(--font-main);
   min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Glassmorphism Card Utility */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.glass-card:hover {
+  border-color: rgba(112, 66, 248, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(112, 66, 248, 0.25);
+}
+
+/* Typography Styles */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.heading-gradient {
+  background: linear-gradient(90deg, #ffffff 0%, #b49bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #c496ff 0%, #8752d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #70dfff 0%, #2f80ed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button Styles */
+.btn-glow {
+  position: relative;
+  border-radius: 99px;
+  background: rgba(112, 66, 248, 0.1);
+  border: 1px solid rgba(112, 66, 248, 0.3);
+  color: #fff;
+  padding: 12px 28px;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  overflow: hidden;
+  transition: all 0.3s ease;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  z-index: 10;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-glow:hover {
+  background: rgba(112, 66, 248, 0.25);
+  border-color: #9f7aea;
+  box-shadow: 0 0 20px rgba(112, 66, 248, 0.4);
+}
+
+.btn-glow:hover::before {
+  left: 100%;
+}
+
+/* Sections */
+.section {
+  padding: 8rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Navigation */
+.nav-blur {
+  background: rgba(3, 0, 20, 0.7);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2550;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4580;
+}
+
+/* Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
-  a:hover {
-    color: #747bff;
+
+  50% {
+    transform: translateY(-10px);
   }
-  button {
-    background-color: #f9f9f9;
+
+  100% {
+    transform: translateY(0px);
   }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Hero Background Stars (Simple CSS implementation) */
+.stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 1744px 122px #FFF, 134px 1321px #FFF, 92px 859px #FFF;
+  /* Simplified for brevity, usually generated */
+  animation: animStar 50s linear infinite;
 }
