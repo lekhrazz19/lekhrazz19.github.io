@@ -55,6 +55,88 @@ function StaggerChildren({ children, staggerDelay = 100, className = '' }) {
   );
 }
 
+// Custom Cursor Component
+function CustomCursor() {
+  const cursorRef = useRef(null);
+  const cursorDotRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    const cursorDot = cursorDotRef.current;
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    const moveCursor = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (cursorDot) {
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+      }
+    };
+
+    const animateCursor = () => {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      if (cursor) {
+        cursor.style.left = `${cursorX}px`;
+        cursor.style.top = `${cursorY}px`;
+      }
+      requestAnimationFrame(animateCursor);
+    };
+
+    const handleMouseEnter = (e) => {
+      if (e.target.matches('a, button, .btn, .social-btn, .nav-link, .project-link, input, textarea')) {
+        setIsHovering(true);
+      }
+    };
+
+    const handleMouseLeave = () => setIsHovering(false);
+
+    document.addEventListener('mousemove', moveCursor);
+    document.addEventListener('mouseover', handleMouseEnter);
+    document.addEventListener('mouseout', handleMouseLeave);
+    animateCursor();
+
+    return () => {
+      document.removeEventListener('mousemove', moveCursor);
+      document.removeEventListener('mouseover', handleMouseEnter);
+      document.removeEventListener('mouseout', handleMouseLeave);
+    };
+  }, []);
+
+  return (
+    <>
+      <div ref={cursorRef} className={`custom-cursor ${isHovering ? 'hovering' : ''}`} />
+      <div ref={cursorDotRef} className="cursor-dot" />
+    </>
+  );
+}
+
+// Floating Particles Component
+function FloatingParticles() {
+  return (
+    <div className="particles-container">
+      {[...Array(20)].map((_, i) => (
+        <div
+          key={i}
+          className="particle"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${15 + Math.random() * 20}s`,
+            width: `${2 + Math.random() * 4}px`,
+            height: `${2 + Math.random() * 4}px`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 // SVG Icon Components
 const Icons = {
   Shield: () => (
@@ -235,9 +317,15 @@ const Doodles = {
 export default function App() {
   return (
     <div className="app">
+      {/* Custom Cursor */}
+      <CustomCursor />
+
       {/* Background Elements */}
       <div className="bg-noise"></div>
       <div className="bg-gradient"></div>
+
+      {/* Floating Particles */}
+      <FloatingParticles />
 
       {/* Floating Doodles */}
       <div className="doodle-container">
@@ -318,6 +406,7 @@ export default function App() {
             </div>
           </div>
           <div className="hero-visual">
+
             <div className="hero-card">
               <div className="card-header">
                 <div className="card-dots">
