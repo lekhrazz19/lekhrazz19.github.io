@@ -310,6 +310,292 @@ function App() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="about scroll-animate">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">About Me</span>
+            <h2 className="section-title">Know Who I Am</h2>
+          </div>
+          <div className="about-content">
+            <div className="about-text">
+              <p>
+                Hi, I'm <strong>Lekhraj Singh</strong>, a passionate cybersecurity enthusiast and penetration tester
+                based in Bhilai, India. With a strong foundation in ethical hacking and vulnerability assessment,
+                I specialize in identifying and mitigating security risks in web applications and networks.
+              </p>
+              <p>
+                I have successfully completed over <strong>50+ security assessments</strong> and hold
+                multiple certifications including CEH and CompTIA Security+. My approach combines
+                technical expertise with a deep understanding of the attacker's mindset.
+              </p>
+            </div>
+            <div className="profile-image-wrapper">
+              <div className="profile-image-glow"></div>
+            </div>
+          </div>
+          
+          <h3 className="skills-title">Skills & Technologies</h3>
+          <div className="skills-grid">
+            <CardContainer className="inter-var">
+              <CardBody className="skill-card glow-card card-3d">
+                <CardItem translateZ="50" className="skill-icon">
+                  <svg width="30" height="30"><use href="#icon-shield"/></svg>
+                </CardItem>
+                <CardItem translateZ="60" as="h4">Penetration Testing</CardItem>
+                <CardItem translateZ="40" as="p">Web Apps, APIs, Networks</CardItem>
+              </CardBody>
+            </CardContainer>
+            
+            <CardContainer className="inter-var">
+              <CardBody className="skill-card glow-card card-3d">
+                <CardItem translateZ="50" className="skill-icon">
+                  <svg width="30" height="30"><use href="#icon-code"/></svg>
+                </CardItem>
+                <CardItem translateZ="60" as="h4">Programming</CardItem>
+                <CardItem translateZ="40" as="p">Python, Bash, JavaScript</CardItem>
+              </CardBody>
+            </CardContainer>
+            
+            <CardContainer className="inter-var">
+              <CardBody className="skill-card glow-card card-3d">
+                <CardItem translateZ="50" className="skill-icon">
+                  <svg width="30" height="30"><use href="#icon-network"/></svg>
+                </CardItem>
+                <CardItem translateZ="60" as="h4">Network Security</CardItem>
+                <CardItem translateZ="40" as="p">Firewall, IDS/IPS, VPN</CardItem>
+              </CardBody>
+            </CardContainer>
+            
+            <CardContainer className="inter-var">
+              <CardBody className="skill-card glow-card card-3d">
+                <CardItem translateZ="50" className="skill-icon">
+                  <svg width="30" height="30"><use href="#icon-tools"/></svg>
+                </CardItem>
+                <CardItem translateZ="60" as="h4">Security Tools</CardItem>
+                <CardItem translateZ="40" as="p">Burp Suite, Metasploit, Nmap</CardItem>
+              </CardBody>
+            </CardContainer>
+            
+            <CardContainer className="inter-var">
+              <CardBody className="skill-card glow-card card-3d">
+                <CardItem translateZ="50" className="skill-icon">
+                  <svg width="30" height="30"><use href="#icon-shield"/></svg>
+                </CardItem>
+                <CardItem translateZ="60" as="h4">Web Security</CardItem>
+                <CardItem translateZ="40" as="p">OWASP Top 10, SQLi, XSS</CardItem>
+              </CardBody>
+            </CardContainer>
+            
+            <CardContainer className="inter-var">
+              <CardBody className="skill-card glow-card card-3d">
+                <CardItem translateZ="50" className="skill-icon">
+                  <svg width="30" height="30"><use href="#icon-code"/></svg>
+                </CardItem>
+                <CardItem translateZ="60" as="h4">Scripting</CardItem>
+                <CardItem translateZ="40" as="p">Automation, Payload Crafting</CardItem>
+              </CardBody>
+            </CardContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="portfolio scroll-animate">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Portfolio</span>
+            <h2 className="section-title">My Work</h2>
+          </div>
+          <div className="portfolio-grid">
+            <CardContainer className="inter-var">
+              <CardBody className="portfolio-card glow-card card-3d">
+                <CardItem translateZ="50" className="portfolio-img">
+                  <div className="portfolio-placeholder">
+                    <svg width="80" height="80"><use href="#icon-network"/></svg>
+                  </div>
+                </CardItem>
+                <div className="portfolio-content">
+                  <CardItem translateZ="70" as="h3" className="portfolio-title">Homelab Security Setup</CardItem>
+                  <CardItem translateZ="50" as="p" className="portfolio-desc">
+                    Built a comprehensive security homelab with pfSense firewall, Splunk SIEM,
+                    and vulnerable machines for penetration testing practice.
+                  </CardItem>
+                  <CardItem translateZ="40">
+                    <div className="portfolio-tech">
+                      <span className="tech-tag">pfSense</span>
+                      <span className="tech-tag">Splunk</span>
+                      <span className="tech-tag">Kali Linux</span>
+                    </div>
+                  </CardItem>
+                </div>
+              </CardBody>
+            </CardContainer>
+            
+            <CardContainer className="inter-var">
+              <CardBody className="portfolio-card glow-card card-3d">
+                <CardItem translateZ="50" className="portfolio-img">
+                  <div className="portfolio-placeholder">
+                    <svg width="80" height="80"><use href="#icon-shield"/></svg>
+                  </div>
+                </CardItem>
+                <div className="portfolio-content">
+                  <CardItem translateZ="70" as="h3" className="portfolio-title">Web Application Assessment</CardItem>
+                  <CardItem translateZ="50" as="p" className="portfolio-desc">
+                    Conducted security assessment of an e-commerce platform, identifying and
+                    reporting 15+ vulnerabilities including SQL injection and XSS flaws.
+                  </CardItem>
+                  <CardItem translateZ="40">
+                    <div className="portfolio-tech">
+                      <span className="tech-tag">Burp Suite</span>
+                      <span className="tech-tag">OWASP</span>
+                      <span className="tech-tag">SQLMap</span>
+                    </div>
+                  </CardItem>
+                </div>
+              </CardBody>
+            </CardContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* Blogs Section */}
+      <section id="blogs" className="blogs scroll-animate">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Blog</span>
+            <h2 className="section-title">Latest Articles</h2>
+          </div>
+          <div className="blogs-grid">
+            <CardContainer className="inter-var">
+              <CardBody className="blog-card glow-card card-3d">
+                <CardItem translateZ="50" className="blog-img">
+                  <div className="blog-placeholder">
+                    <svg width="60" height="60"><use href="#icon-shield"/></svg>
+                  </div>
+                </CardItem>
+                <div className="blog-content">
+                  <CardItem translateZ="60" as="h3" className="blog-title">
+                    Understanding OWASP Top 10 2024
+                  </CardItem>
+                  <CardItem translateZ="40" as="p" className="blog-desc">
+                    A comprehensive guide to the latest OWASP Top 10 vulnerabilities and how to
+                    prevent them in modern web applications.
+                  </CardItem>
+                  <CardItem translateZ="30">
+                    <div className="blog-meta">
+                      <span className="blog-date">Jan 15, 2025</span>
+                      <span className="blog-read">5 min read</span>
+                    </div>
+                  </CardItem>
+                </div>
+              </CardBody>
+            </CardContainer>
+            
+            <CardContainer className="inter-var">
+              <CardBody className="blog-card glow-card card-3d">
+                <CardItem translateZ="50" className="blog-img">
+                  <div className="blog-placeholder">
+                    <svg width="60" height="60"><use href="#icon-code"/></svg>
+                  </div>
+                </CardItem>
+                <div className="blog-content">
+                  <CardItem translateZ="60" as="h3" className="blog-title">
+                    Advanced Recon Techniques
+                  </CardItem>
+                  <CardItem translateZ="40" as="p" className="blog-desc">
+                    Learn advanced reconnaissance techniques for bug bounty hunting including
+                    subdomain enumeration and asset discovery.
+                  </CardItem>
+                  <CardItem translateZ="30">
+                    <div className="blog-meta">
+                      <span className="blog-date">Dec 28, 2024</span>
+                      <span className="blog-read">8 min read</span>
+                    </div>
+                  </CardItem>
+                </div>
+              </CardBody>
+            </CardContainer>
+            
+            <CardContainer className="inter-var">
+              <CardBody className="blog-card glow-card card-3d">
+                <CardItem translateZ="50" className="blog-img">
+                  <div className="blog-placeholder">
+                    <svg width="60" height="60"><use href="#icon-network"/></svg>
+                  </div>
+                </CardItem>
+                <div className="blog-content">
+                  <CardItem translateZ="60" as="h3" className="blog-title">
+                    Building a Security Homelab
+                  </CardItem>
+                  <CardItem translateZ="40" as="p" className="blog-desc">
+                    Step-by-step guide to setting up your own security homelab for practicing
+                    penetration testing and network security.
+                  </CardItem>
+                  <CardItem translateZ="30">
+                    <div className="blog-meta">
+                      <span className="blog-date">Dec 10, 2024</span>
+                      <span className="blog-read">12 min read</span>
+                    </div>
+                  </CardItem>
+                </div>
+              </CardBody>
+            </CardContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="experience scroll-animate">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Experience</span>
+            <h2 className="section-title">My Journey</h2>
+          </div>
+          <div className="timeline">
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content glow-card">
+                <div className="timeline-header">
+                  <div className="company-logo">
+                    <img src="/assets/company-logos/bugcrowd.svg" alt="Bugcrowd" />
+                  </div>
+                  <div>
+                    <h3 className="timeline-title">Security Researcher</h3>
+                    <p className="timeline-company">Bugcrowd</p>
+                  </div>
+                </div>
+                <p className="timeline-date">June 2025 - Present</p>
+                <p className="timeline-desc">
+                  Active bug bounty researcher on Bugcrowd platform, identifying and reporting
+                  security vulnerabilities in web applications and APIs.
+                </p>
+              </div>
+            </div>
+            
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content glow-card">
+                <div className="timeline-header">
+                  <div className="company-logo">
+                    <svg width="40" height="40"><use href="#icon-shield"/></svg>
+                  </div>
+                  <div>
+                    <h3 className="timeline-title">Cybersecurity Volunteer</h3>
+                    <p className="timeline-company">HackerHub8</p>
+                  </div>
+                </div>
+                <p className="timeline-date">October 2025 - Present</p>
+                <p className="timeline-desc">
+                  Contributing to community security initiatives, conducting workshops,
+                  and mentoring aspiring security professionals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
