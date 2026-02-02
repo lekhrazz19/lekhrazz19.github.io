@@ -1,5 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './styles.css';
+
+// Custom hook for scroll animations
+function useInView(options = {}) {
+  const [isInView, setIsInView] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: options.threshold || 0.1, rootMargin: options.rootMargin || '0px' }
+    );
+
+    const currentRef = ref.current;
+    if (currentRef) observer.observe(currentRef);
+    return () => { if (currentRef) observer.unobserve(currentRef); };
+  }, [options.threshold, options.rootMargin]);
+
+  return [ref, isInView];
+}
+
+// Animated wrapper component
+function Animate({ children, delay = 0, className = '', animation = 'fade-up' }) {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+  return (
+    <div
+      ref={ref}
+      className={`animate ${animation} ${isInView ? 'in-view' : ''} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
+
+// Stagger animation wrapper
+function StaggerChildren({ children, staggerDelay = 100, className = '' }) {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+  return (
+    <div ref={ref} className={className}>
+      {React.Children.map(children, (child, index) => (
+        <div
+          className={`animate fade-up ${isInView ? 'in-view' : ''}`}
+          style={{ transitionDelay: `${index * staggerDelay}ms` }}
+        >
+          {child}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 // SVG Icon Components
 const Icons = {
@@ -610,27 +664,18 @@ export default function App() {
                 Whether you're looking for a security researcher, need a penetration test,
                 or want to discuss cybersecurity, I'd love to hear from you.
               </p>
-              <div className="contact-links">
-                <a href="mailto:singhlekhraj497@gmail.com" className="contact-item">
-                  <div className="contact-icon"><Icons.Mail /></div>
-                  <div>
-                    <span className="contact-label">Email</span>
-                    <span className="contact-value">singhlekhraj497@gmail.com</span>
-                  </div>
+              <div className="contact-buttons">
+                <a href="mailto:singhlekhraj497@gmail.com" className="contact-btn">
+                  <Icons.Mail />
+                  <span>Email Me</span>
                 </a>
-                <a href="https://linkedin.com/in/lekhrazz19" target="_blank" rel="noopener noreferrer" className="contact-item">
-                  <div className="contact-icon"><Icons.Linkedin /></div>
-                  <div>
-                    <span className="contact-label">LinkedIn</span>
-                    <span className="contact-value">linkedin.com/in/lekhrazz19</span>
-                  </div>
+                <a href="https://linkedin.com/in/lekhrazz19" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-outline">
+                  <Icons.Linkedin />
+                  <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/lekhrazz19" target="_blank" rel="noopener noreferrer" className="contact-item">
-                  <div className="contact-icon"><Icons.Github /></div>
-                  <div>
-                    <span className="contact-label">GitHub</span>
-                    <span className="contact-value">github.com/lekhrazz19</span>
-                  </div>
+                <a href="https://github.com/lekhrazz19" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-outline">
+                  <Icons.Github />
+                  <span>GitHub</span>
                 </a>
               </div>
             </div>
