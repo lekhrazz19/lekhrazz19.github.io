@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
 import { CardBody, CardContainer, CardItem } from './components/ui/3d-card';
+import { TextGenerateEffect } from './components/ui/text-generate-effect';
+import { TypewriterEffect } from './components/ui/typewriter-effect';
+import { MovingBorder } from './components/ui/moving-border';
+import { BackgroundBeams } from './components/ui/background-beams';
+import { InfiniteMovingCards } from './components/ui/infinite-moving-cards';
 
 function App() {
   useEffect(() => {
@@ -184,18 +189,33 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="hero">
-        <div className="container">
+      <section id="hero" className="hero" style={{ position: 'relative' }}>
+        <BackgroundBeams />
+        <div className="container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="hero-content">
             <h1 className="hero-title">
               <span className="gradient-text">Securing Digital</span><br />Infrastructure
             </h1>
-            <p className="hero-subtitle">
-              Cybersecurity Researcher | Penetration Tester | Bug Bounty Hunter
-            </p>
-            <div className="hero-buttons">
-              <a href="#contact" className="btn btn-primary">Get in Touch</a>
-              <a href="#portfolio" className="btn btn-secondary">View Projects</a>
+            <TypewriterEffect 
+              words={['Penetration Tester', 'Bug Bounty Hunter', 'Security Researcher', 'Ethical Hacker']}
+              className="hero-subtitle text-xl md:text-2xl"
+              cursorClassName="text-cyan-400"
+            />
+            <TextGenerateEffect 
+              words="Protecting your digital assets through comprehensive security assessments and vulnerability research."
+              className="hero-description text-gray-400 max-w-2xl mx-auto mt-4"
+            />
+            <div className="hero-buttons" style={{ marginTop: '2rem' }}>
+              <MovingBorder
+                as="a"
+                href="#contact"
+                duration={3000}
+                className="px-8 py-3 text-white font-semibold"
+                containerClassName="rounded-lg"
+              >
+                Get in Touch
+              </MovingBorder>
+              <a href="#portfolio" className="btn btn-secondary" style={{ marginLeft: '1rem' }}>View Projects</a>
             </div>
             <div className="hero-stats">
               <div className="stat-item">
@@ -397,6 +417,54 @@ function App() {
               </CardBody>
             </CardContainer>
           </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="certifications scroll-animate" style={{ padding: '80px 0', background: 'rgba(10, 15, 28, 0.5)' }}>
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Achievements</span>
+            <h2 className="section-title">Certifications & Recognition</h2>
+          </div>
+          <InfiniteMovingCards
+            items={[
+              {
+                icon: <svg width="40" height="40"><use href="#icon-shield"/></svg>,
+                name: "Certified Ethical Hacker (CEH)",
+                title: "EC-Council • Advanced penetration testing certification"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-network"/></svg>,
+                name: "CompTIA Security+",
+                title: "CompTIA • Industry-standard security certification"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-code"/></svg>,
+                name: "Offensive Security Certified Professional",
+                title: "Offensive Security • Advanced exploitation techniques"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-target"/></svg>,
+                name: "Bug Bounty Hunter",
+                title: "HackerOne & Bugcrowd • Active researcher with multiple critical findings"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-tools"/></svg>,
+                name: "Web Application Security",
+                title: "PortSwigger • Expert-level web security knowledge"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-radar"/></svg>,
+                name: "Burp Suite Certified Practitioner",
+                title: "PortSwigger • Advanced web application security testing"
+              }
+            ]}
+            direction="left"
+            speed="slow"
+            pauseOnHover={true}
+            className="py-8"
+          />
         </div>
       </section>
 
