@@ -5,7 +5,6 @@ import { TypewriterEffect } from './components/ui/typewriter-effect';
 import { MovingBorder } from './components/ui/moving-border';
 import { BackgroundBeams } from './components/ui/background-beams';
 import { InfiniteMovingCards } from './components/ui/infinite-moving-cards';
-import { Carousel, Card } from './components/ui/apple-cards-carousel';
 
 function App() {
   useEffect(() => {
@@ -423,137 +422,49 @@ function App() {
 
       {/* Certifications Section */}
       <section className="certifications scroll-animate" style={{ padding: '80px 0', background: 'rgba(10, 15, 28, 0.5)' }}>
-        <div className="w-full h-full py-20">
-          <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-white">
-            Certifications & Achievements
-          </h2>
-          <Carousel items={[
-            <Card key="ceh" card={{
-              category: "Certification",
-              title: "Certified Ethical Hacker (CEH)",
-              src: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2340&auto=format&fit=crop",
-              content: (
-                <div className="bg-gray-800 p-8 md:p-14 rounded-3xl mb-4">
-                  <p className="text-gray-300 text-base md:text-2xl max-w-3xl mx-auto">
-                    <span className="font-bold text-white">EC-Council Certified Ethical Hacker</span><br/>
-                    Advanced penetration testing certification covering all phases of ethical hacking. 
-                    Expertise in reconnaissance, scanning, enumeration, system hacking, malware threats, 
-                    social engineering, and cryptography.
-                  </p>
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Network Security</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Web Application Testing</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Vulnerability Assessment</span>
-                  </div>
-                </div>
-              )
-            }} index={0} />,
-            <Card key="security+" card={{
-              category: "Certification",
-              title: "CompTIA Security+",
-              src: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2340&auto=format&fit=crop",
-              content: (
-                <div className="bg-gray-800 p-8 md:p-14 rounded-3xl mb-4">
-                  <p className="text-gray-300 text-base md:text-2xl max-w-3xl mx-auto">
-                    <span className="font-bold text-white">CompTIA Security+ Certified</span><br/>
-                    Industry-standard cybersecurity certification demonstrating baseline skills in 
-                    threat management, cryptography, identity management, and compliance. Recognized 
-                    globally as a foundational security credential.
-                  </p>
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Risk Management</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Incident Response</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Cryptography</span>
-                  </div>
-                </div>
-              )
-            }} index={1} />,
-            <Card key="oscp" card={{
-              category: "Advanced Certification",
-              title: "OSCP - Offensive Security",
-              src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2340&auto=format&fit=crop",
-              content: (
-                <div className="bg-gray-800 p-8 md:p-14 rounded-3xl mb-4">
-                  <p className="text-gray-300 text-base md:text-2xl max-w-3xl mx-auto">
-                    <span className="font-bold text-white">Offensive Security Certified Professional</span><br/>
-                    Hands-on penetration testing certification requiring successful exploitation of multiple 
-                    machines in a 24-hour exam. Demonstrates real-world offensive security skills including 
-                    buffer overflows, privilege escalation, and post-exploitation.
-                  </p>
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Exploitation</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Privilege Escalation</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Post-Exploitation</span>
-                  </div>
-                </div>
-              )
-            }} index={2} />,
-            <Card key="bugbounty" card={{
-              category: "Achievement",
-              title: "Bug Bounty Hunter",
-              src: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2340&auto=format&fit=crop",
-              content: (
-                <div className="bg-gray-800 p-8 md:p-14 rounded-3xl mb-4">
-                  <p className="text-gray-300 text-base md:text-2xl max-w-3xl mx-auto">
-                    <span className="font-bold text-white">Active Bug Bounty Researcher</span><br/>
-                    Actively hunting vulnerabilities on HackerOne and Bugcrowd platforms. Successfully 
-                    identified and reported multiple critical vulnerabilities including authentication bypass, 
-                    SQL injection, and business logic flaws across various programs.
-                  </p>
-                  <div className="mt-8 grid grid-cols-2 gap-4">
-                    <div className="bg-gray-900 p-4 rounded-lg">
-                      <p className="text-cyan-400 text-3xl font-bold">15+</p>
-                      <p className="text-gray-400">Valid Reports</p>
-                    </div>
-                    <div className="bg-gray-900 p-4 rounded-lg">
-                      <p className="text-cyan-400 text-3xl font-bold">5</p>
-                      <p className="text-gray-400">Critical Findings</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            }} index={3} />,
-            <Card key="burp" card={{
-              category: "Certification",
-              title: "Burp Suite Certified",
-              src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2334&auto=format&fit=crop",
-              content: (
-                <div className="bg-gray-800 p-8 md:p-14 rounded-3xl mb-4">
-                  <p className="text-gray-300 text-base md:text-2xl max-w-3xl mx-auto">
-                    <span className="font-bold text-white">Burp Suite Certified Practitioner</span><br/>
-                    Advanced web application security testing certification by PortSwigger. Demonstrates 
-                    expert-level skills in identifying OWASP Top 10 vulnerabilities using Burp Suite Professional.
-                  </p>
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">SQL Injection</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">XSS</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">CSRF</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">Authentication Bypass</span>
-                  </div>
-                </div>
-              )
-            }} index={4} />,
-            <Card key="webappSec" card={{
-              category: "Expertise",
-              title: "Web Application Security",
-              src: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=2274&auto=format&fit=crop",
-              content: (
-                <div className="bg-gray-800 p-8 md:p-14 rounded-3xl mb-4">
-                  <p className="text-gray-300 text-base md:text-2xl max-w-3xl mx-auto">
-                    <span className="font-bold text-white">Expert Web Security Professional</span><br/>
-                    Deep expertise in web application security with comprehensive knowledge of OWASP Top 10, 
-                    secure coding practices, and modern web vulnerabilities. Specialized in API security testing 
-                    and secure architecture reviews.
-                  </p>
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">OWASP Top 10</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">API Security</span>
-                    <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg">JWT Analysis</span>
-                  </div>
-                </div>
-              )
-            }} index={5} />
-          ]} />
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Achievements</span>
+            <h2 className="section-title">Certifications & Recognition</h2>
+          </div>
+          <InfiniteMovingCards
+            items={[
+              {
+                icon: <svg width="40" height="40"><use href="#icon-shield"/></svg>,
+                name: "Certified Ethical Hacker (CEH)",
+                title: "EC-Council • Advanced penetration testing certification"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-network"/></svg>,
+                name: "CompTIA Security+",
+                title: "CompTIA • Industry-standard security certification"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-code"/></svg>,
+                name: "Offensive Security Certified Professional",
+                title: "Offensive Security • Advanced exploitation techniques"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-target"/></svg>,
+                name: "Bug Bounty Hunter",
+                title: "HackerOne & Bugcrowd • Active researcher with multiple critical findings"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-tools"/></svg>,
+                name: "Web Application Security",
+                title: "PortSwigger • Expert-level web security knowledge"
+              },
+              {
+                icon: <svg width="40" height="40"><use href="#icon-radar"/></svg>,
+                name: "Burp Suite Certified Practitioner",
+                title: "PortSwigger • Advanced web application security testing"
+              }
+            ]}
+            direction="left"
+            speed="slow"
+            pauseOnHover={true}
+            className="py-8"
+          />
         </div>
       </section>
 
