@@ -169,6 +169,17 @@ body {
     color: var(--accent-primary);
     margin-bottom: 30px;
     animation: fadeInUp 0.8s ease-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+    animation: fadeInUp 0.8s ease-out, glowPulse 6s ease-in-out infinite;
+}
+
+.tag-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
 }
 
 .hero-title {
@@ -374,6 +385,8 @@ section {
     border: 1px solid var(--border-color);
     text-align: center;
     transition: all 0.3s;
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .skill-item:hover {
@@ -383,8 +396,25 @@ section {
 }
 
 .skill-icon {
-    font-size: 32px;
-    margin-bottom: 10px;
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 12px;
+    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(0, 212, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.2);
+    animation: floatIcon 6s ease-in-out infinite;
+}
+
+.skill-icon svg,
+.timeline-icon svg,
+.cert-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
 }
 
 .skill-name {
@@ -435,6 +465,35 @@ section {
     border-radius: 15px;
     border: 1px solid var(--border-color);
     transition: all 0.3s;
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::after,
+.portfolio-card::after,
+.timeline-item::after,
+.cert-item::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -40%;
+    width: 80%;
+    height: 220%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    transform: rotate(20deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.service-card:hover::after,
+.portfolio-card:hover::after,
+.timeline-item:hover::after,
+.cert-item:hover::after {
+    opacity: 1;
+    animation: shimmer 1.2s ease;
 }
 
 .service-card:hover {
@@ -491,6 +550,10 @@ section {
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: all 0.3s;
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
 }
 
 .portfolio-card:hover {
@@ -587,6 +650,10 @@ section {
     border: 1px solid var(--border-color);
     margin-bottom: 30px;
     transition: all 0.3s;
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
 }
 
 .timeline-item:hover {
@@ -595,7 +662,15 @@ section {
 }
 
 .timeline-icon {
-    font-size: 40px;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.12);
+    color: var(--accent-primary);
+    box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.25);
 }
 
 .timeline-content {
@@ -657,6 +732,10 @@ section {
     border: 1px solid var(--border-color);
     text-align: center;
     transition: all 0.3s;
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
 }
 
 .cert-item:hover {
@@ -665,8 +744,16 @@ section {
 }
 
 .cert-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: rgba(0, 212, 255, 0.12);
+    color: var(--accent-primary);
+    box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.25);
 }
 
 .cert-name {
@@ -745,6 +832,8 @@ section {
     padding: 40px;
     border-radius: 15px;
     border: 1px solid var(--border-color);
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .form-group {
@@ -819,6 +908,33 @@ section {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+    }
+    50% {
+        box-shadow: 0 18px 40px rgba(0, 212, 255, 0.3);
+    }
+}
+
+@keyframes shimmer {
+    from {
+        transform: translateX(-140%) rotate(20deg);
+    }
+    to {
+        transform: translateX(220%) rotate(20deg);
     }
 }
 

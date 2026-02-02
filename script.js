@@ -197,11 +197,10 @@ if (window.innerWidth > 768) {
     document.body.appendChild(cursor);
 
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
     });
 
-    // Add cursor styles
     const style = document.createElement('style');
     style.textContent = `
         .custom-cursor {
@@ -220,7 +219,6 @@ if (window.innerWidth > 768) {
     `;
     document.head.appendChild(style);
 
-    // Add active state on clickable elements
     document.querySelectorAll('a, button, .service-card, .portfolio-card').forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('active'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
@@ -287,22 +285,26 @@ document.querySelectorAll('.stat-value').forEach(stat => {
 });
 
 // ===========================
-// Console Easter Egg
+// 3D Tilt Interaction (Premium)
 // ===========================
-console.log('%c🛡️ Cybersecurity Portfolio', 'color: #00D4FF; font-size: 20px; font-weight: bold;');
-console.log('%cLooking for vulnerabilities? Try bug bounty programs instead! 😉', 'color: #A0AEC0; font-size: 14px;');
-console.log('%cInterested in collaboration? Email: singhlekhraj497@gmail.com', 'color: #00D4FF; font-size: 14px;');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tiltElements = document.querySelectorAll('.service-card, .portfolio-card, .skill-item, .timeline-item, .cert-item, .contact-form');
 
-// ===========================
-// Performance Monitoring
-// ===========================
-if ('PerformanceObserver' in window) {
-    const perfObserver = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-            if (entry.entryType === 'largest-contentful-paint') {
-                console.log('LCP:', entry.startTime);
-            }
-        }
+if (!prefersReducedMotion) {
+    tiltElements.forEach((card) => {
+        card.addEventListener('mousemove', (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            const midX = rect.width / 2;
+            const midY = rect.height / 2;
+            const rotateX = ((y - midY) / midY) * 6;
+            const rotateY = ((x - midX) / midX) * -6;
+            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+        });
     });
-    perfObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 }
