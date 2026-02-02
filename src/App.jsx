@@ -142,6 +142,108 @@ function FloatingParticles() {
   );
 }
 
+// Magic Color Change Button
+// Magic Theme Switcher Button
+function MagicButton() {
+  const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const themes = [
+    {
+      name: 'Emerald',
+      colors: {
+        '--accent-primary': '#10b981',
+        '--accent-secondary': '#06b6d4',
+        '--accent-gradient': 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
+        '--border-hover': 'rgba(16, 185, 129, 0.3)',
+        '--shadow-glow': '0 0 40px rgba(16, 185, 129, 0.15)'
+      }
+    },
+    {
+      name: 'Cyberpunk',
+      colors: {
+        '--accent-primary': '#f472b6',
+        '--accent-secondary': '#60a5fa',
+        '--accent-gradient': 'linear-gradient(135deg, #f472b6 0%, #60a5fa 100%)',
+        '--border-hover': 'rgba(244, 114, 182, 0.3)',
+        '--shadow-glow': '0 0 40px rgba(244, 114, 182, 0.15)'
+      }
+    },
+    {
+      name: 'Midnight',
+      colors: {
+        '--accent-primary': '#8b5cf6',
+        '--accent-secondary': '#6366f1',
+        '--accent-gradient': 'linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%)',
+        '--border-hover': 'rgba(139, 92, 246, 0.3)',
+        '--shadow-glow': '0 0 40px rgba(139, 92, 246, 0.15)'
+      }
+    },
+    {
+      name: 'Sunset',
+      colors: {
+        '--accent-primary': '#f59e0b',
+        '--accent-secondary': '#ef4444',
+        '--accent-gradient': 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
+        '--border-hover': 'rgba(245, 158, 11, 0.3)',
+        '--shadow-glow': '0 0 40px rgba(245, 158, 11, 0.15)'
+      }
+    },
+    {
+      name: 'Neon',
+      colors: {
+        '--accent-primary': '#a3e635',
+        '--accent-secondary': '#22d3ee',
+        '--accent-gradient': 'linear-gradient(135deg, #a3e635 0%, #22d3ee 100%)',
+        '--border-hover': 'rgba(163, 230, 53, 0.3)',
+        '--shadow-glow': '0 0 40px rgba(163, 230, 53, 0.15)'
+      }
+    }
+  ];
+
+  const changeTheme = () => {
+    const nextIndex = (currentThemeIndex + 1) % themes.length;
+    setCurrentThemeIndex(nextIndex);
+
+    const theme = themes[nextIndex];
+    const root = document.documentElement;
+
+    Object.entries(theme.colors).forEach(([property, value]) => {
+      root.style.setProperty(property, value);
+    });
+  };
+
+  return (
+    <button
+      onClick={changeTheme}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="magic-button"
+      style={{
+        background: themes[currentThemeIndex].colors['--accent-gradient'],
+        boxShadow: isHovered
+          ? themes[currentThemeIndex].colors['--shadow-glow'].replace('0.15', '0.6')
+          : '0 4px 15px rgba(0,0,0,0.3)',
+      }}
+      aria-label="Switch Theme"
+      title={`Current Theme: ${themes[currentThemeIndex].name}`}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{ transform: isHovered ? 'rotate(180deg)' : 'rotate(0deg)' }}
+      >
+        <circle cx="12" cy="12" r="5" />
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+  );
+}
+
 // SVG Icon Components
 const Icons = {
   Shield: () => (
@@ -330,6 +432,9 @@ export default function App() {
 
       {/* Floating Particles */}
       <FloatingParticles />
+
+      {/* Magic Button */}
+      <MagicButton />
 
       {/* Floating Doodles */}
       <div className="doodle-container">
