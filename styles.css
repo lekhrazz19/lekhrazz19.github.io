@@ -634,6 +634,81 @@ section {
 }
 
 /* ===========================
+   Blogs Section
+   =========================== */
+.blogs {
+    background: var(--bg-primary);
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.blog-card {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 28px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+}
+
+.blog-meta {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    margin-bottom: 12px;
+}
+
+.blog-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.blog-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.blog-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+.blog-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: width 0.3s;
+}
+
+.blog-link:hover::after {
+    width: 100%;
+}
+
+/* ===========================
    Experience Section
    =========================== */
 .timeline {
@@ -965,6 +1040,10 @@ section {
     .cert-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .blogs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1018,6 +1097,10 @@ section {
     }
     
     .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blogs-grid {
         grid-template-columns: 1fr;
     }
     
