@@ -4,6 +4,11 @@ import './styles.css';
 export default function App() {
   return (
     <div className="app">
+      {/* Background Doodles */}
+      <div className="doodle doodle-1"></div>
+      <div className="doodle doodle-2"></div>
+      <div className="doodle doodle-3"></div>
+
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
@@ -23,6 +28,19 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero-section">
+        {/* Decorative Doodles */}
+        <svg className="hero-doodle hero-doodle-1" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(168, 85, 247, 0.2)" strokeWidth="2"/>
+          <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(236, 72, 153, 0.15)" strokeWidth="1.5"/>
+          <path d="M 20 50 Q 50 20 80 50" fill="none" stroke="rgba(168, 85, 247, 0.15)" strokeWidth="2"/>
+        </svg>
+        
+        <svg className="hero-doodle hero-doodle-2" viewBox="0 0 100 100">
+          <rect x="20" y="20" width="60" height="60" fill="none" stroke="rgba(236, 72, 153, 0.2)" strokeWidth="2" rx="10"/>
+          <line x1="30" y1="30" x2="70" y2="70" stroke="rgba(168, 85, 247, 0.15)" strokeWidth="1"/>
+          <line x1="70" y1="30" x2="30" y2="70" stroke="rgba(168, 85, 247, 0.15)" strokeWidth="1"/>
+        </svg>
+
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">Hi, I'm <span className="gradient-text">Lekhraj Singh</span></h1>
@@ -50,6 +68,11 @@ export default function App() {
 
       {/* About Section */}
       <section id="about" className="about-section">
+        <svg className="section-doodle" viewBox="0 0 120 120">
+          <path d="M 60 20 L 80 60 L 60 100 L 40 60 Z" fill="none" stroke="rgba(168, 85, 247, 0.15)" strokeWidth="2"/>
+          <circle cx="60" cy="60" r="20" fill="none" stroke="rgba(236, 72, 153, 0.1)" strokeWidth="1"/>
+        </svg>
+        
         <div className="container">
           <h2 className="section-title">About Me</h2>
           <div className="about-grid">
@@ -60,16 +83,25 @@ export default function App() {
             <div className="about-skills">
               <h3>What I Do</h3>
               <div className="skill-box">
-                <h4>🎨 Frontend Development</h4>
-                <p>React, JavaScript, CSS3, Responsive Design</p>
+                <span className="skill-emoji">🎨</span>
+                <div>
+                  <h4>Frontend Development</h4>
+                  <p>React, JavaScript, CSS3, Responsive Design</p>
+                </div>
               </div>
               <div className="skill-box">
-                <h4>⚙️ Backend Development</h4>
-                <p>Node.js, Express, MongoDB, PostgreSQL</p>
+                <span className="skill-emoji">⚙️</span>
+                <div>
+                  <h4>Backend Development</h4>
+                  <p>Node.js, Express, MongoDB, PostgreSQL</p>
+                </div>
               </div>
               <div className="skill-box">
-                <h4>🚀 Full Stack Solutions</h4>
-                <p>End-to-end development with modern stack</p>
+                <span className="skill-emoji">🚀</span>
+                <div>
+                  <h4>Full Stack Solutions</h4>
+                  <p>End-to-end development with modern stack</p>
+                </div>
               </div>
             </div>
           </div>
@@ -78,11 +110,21 @@ export default function App() {
 
       {/* Skills Section */}
       <section id="skills" className="skills-section">
+        <svg className="section-doodle" viewBox="0 0 120 120">
+          <g fill="none" stroke="rgba(168, 85, 247, 0.15)" strokeWidth="2">
+            <circle cx="60" cy="30" r="15"/>
+            <circle cx="30" cy="75" r="15"/>
+            <circle cx="90" cy="75" r="15"/>
+            <line x1="60" y1="45" x2="30" y2="60"/>
+            <line x1="60" y1="45" x2="90" y2="60"/>
+          </g>
+        </svg>
+        
         <div className="container">
           <h2 className="section-title">Skills</h2>
           <div className="skills-grid">
             <div className="skill-category">
-              <h3>Frontend</h3>
+              <h3>💻 Frontend</h3>
               <ul>
                 <li>React</li>
                 <li>JavaScript</li>
@@ -92,7 +134,7 @@ export default function App() {
               </ul>
             </div>
             <div className="skill-category">
-              <h3>Backend</h3>
+              <h3>🗄️ Backend</h3>
               <ul>
                 <li>Node.js</li>
                 <li>Express</li>
@@ -102,7 +144,7 @@ export default function App() {
               </ul>
             </div>
             <div className="skill-category">
-              <h3>Tools & Platforms</h3>
+              <h3>🛠️ Tools</h3>
               <ul>
                 <li>Git/GitHub</li>
                 <li>Docker</li>
@@ -117,6 +159,13 @@ export default function App() {
 
       {/* Experience Section */}
       <section id="experience" className="experience-section">
+        <svg className="section-doodle" viewBox="0 0 120 120">
+          <rect x="20" y="20" width="80" height="80" fill="none" stroke="rgba(236, 72, 153, 0.15)" strokeWidth="2" rx="8"/>
+          <line x1="20" y1="50" x2="100" y2="50" stroke="rgba(168, 85, 247, 0.1)" strokeWidth="1"/>
+          <circle cx="35" cy="35" r="4" fill="rgba(168, 85, 247, 0.3)"/>
+          <circle cx="35" cy="65" r="4" fill="rgba(168, 85, 247, 0.3)"/>
+        </svg>
+        
         <div className="container">
           <h2 className="section-title">Experience</h2>
           <div className="timeline">
@@ -124,7 +173,7 @@ export default function App() {
               <div className="timeline-marker"></div>
               <div className="timeline-content">
                 <h3>Senior Developer</h3>
-                <p className="company">Tech Company Inc.</p>
+                <p className="company">💼 Tech Company Inc.</p>
                 <p className="date">2023 - Present</p>
                 <p>Led development of full-stack web applications, improved performance by 40%, and mentored junior developers.</p>
               </div>
@@ -133,7 +182,7 @@ export default function App() {
               <div className="timeline-marker"></div>
               <div className="timeline-content">
                 <h3>Full Stack Developer</h3>
-                <p className="company">Startup X</p>
+                <p className="company">💼 Startup X</p>
                 <p className="date">2021 - 2023</p>
                 <p>Built responsive web interfaces with React, developed REST APIs with Node.js, and managed cloud deployments.</p>
               </div>
@@ -144,10 +193,19 @@ export default function App() {
 
       {/* Projects Section */}
       <section id="projects" className="projects-section">
+        <svg className="section-doodle" viewBox="0 0 120 120">
+          <g fill="none" stroke="rgba(168, 85, 247, 0.15)" strokeWidth="2">
+            <rect x="15" y="15" width="40" height="40" rx="4"/>
+            <rect x="65" y="15" width="40" height="40" rx="4"/>
+            <rect x="40" y="65" width="40" height="40" rx="4"/>
+          </g>
+        </svg>
+        
         <div className="container">
           <h2 className="section-title">Projects</h2>
           <div className="projects-grid">
             <div className="project-card">
+              <div className="project-icon">🛒</div>
               <h3>E-Commerce Platform</h3>
               <p className="tech">React • Node.js • MongoDB • Stripe</p>
               <p>Full-stack e-commerce solution with payment integration and real-time inventory management.</p>
@@ -157,6 +215,7 @@ export default function App() {
               </div>
             </div>
             <div className="project-card">
+              <div className="project-icon">✓</div>
               <h3>Task Management App</h3>
               <p className="tech">React • Firebase • Redux</p>
               <p>Collaborative task management with real-time updates and team collaboration features.</p>
@@ -166,6 +225,7 @@ export default function App() {
               </div>
             </div>
             <div className="project-card">
+              <div className="project-icon">💼</div>
               <h3>Portfolio Website</h3>
               <p className="tech">React • Vite • CSS3</p>
               <p>Modern portfolio website with smooth animations and responsive design.</p>
@@ -180,29 +240,39 @@ export default function App() {
 
       {/* Contact Section */}
       <section id="contact" className="contact-section">
+        <svg className="section-doodle" viewBox="0 0 120 120">
+          <g fill="none" stroke="rgba(236, 72, 153, 0.15)" strokeWidth="2">
+            <path d="M 20 40 L 60 70 L 100 40 L 100 90 Q 100 100 90 100 L 30 100 Q 20 100 20 90 Z"/>
+            <polyline points="20 40 60 70 100 40"/>
+          </g>
+        </svg>
+        
         <div className="container">
           <h2 className="section-title">Get In Touch</h2>
           <div className="contact-wrapper">
             <form className="contact-form">
               <div className="form-group">
                 <input type="text" placeholder="Your Name" required />
+                <span className="form-underline"></span>
               </div>
               <div className="form-group">
                 <input type="email" placeholder="Your Email" required />
+                <span className="form-underline"></span>
               </div>
               <div className="form-group">
                 <textarea placeholder="Your Message" rows="5" required></textarea>
+                <span className="form-underline"></span>
               </div>
-              <button type="submit" className="btn btn-primary">Send Message</button>
+              <button type="submit" className="btn btn-primary">Send Message ✉️</button>
             </form>
             <div className="contact-info">
               <h3>Contact Info</h3>
-              <p><strong>Email:</strong> singhlekhraj497@gmail.com</p>
-              <p><strong>Location:</strong> Bhilai, India</p>
+              <p><strong>📧 Email:</strong> <a href="mailto:singhlekhraj497@gmail.com">singhlekhraj497@gmail.com</a></p>
+              <p><strong>📍 Location:</strong> Bhilai, India</p>
               <div className="social-links">
-                <a href="https://linkedin.com/in/lekhraj-singh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/lekhrazz19" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://twitter.com/lekhrajsingh" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://linkedin.com/in/lekhraj-singh" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+                <a href="https://github.com/lekhrazz19" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+                <a href="https://twitter.com/lekhrajsingh" target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
               </div>
             </div>
           </div>
@@ -213,6 +283,7 @@ export default function App() {
       <footer className="footer">
         <div className="container">
           <p>&copy; 2024 Lekhraj Singh. All rights reserved. Built with React + Vite.</p>
+          <p className="footer-emoji">✨ Made with ❤️ by Lekhraj ✨</p>
         </div>
       </footer>
     </div>
