@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Header from './components/Header';
 import Hero from './sections/Hero';
-import ScrollDrawing from './sections/ScrollDrawing';
+
 import Photos from './sections/Photos';
 import Skills from './sections/Skills';
 import Experience from './sections/Experience';
@@ -11,6 +11,7 @@ import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import ThreeJSBackground from './components/ThreeJSBackground';
 import InteractiveClickEffect from './components/InteractiveClickEffect';
+import InteractiveTerminal from './components/InteractiveTerminal';
 
 function App() {
   useEffect(() => {
@@ -70,10 +71,11 @@ function App() {
     <div className="antialiased text-white relative">
       <ThreeJSBackground />
       <InteractiveClickEffect />
+      <InteractiveTerminal />
       <Header />
       <main className="relative z-10">
         <Hero />
-        <ScrollDrawing />
+
         <Photos />
         <Skills />
         <Experience />

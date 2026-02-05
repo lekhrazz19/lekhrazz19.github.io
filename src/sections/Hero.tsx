@@ -66,7 +66,7 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="flex flex-col items-center gap-10"
+                        className="flex flex-col items-center gap-10 relative z-50"
                     >
                         <GlassCard className="p-1 inline-flex rounded-xl bg-white/5 border-white/10">
                             <div className="flex items-center gap-6 px-8 py-4">
@@ -77,29 +77,7 @@ const Hero = () => {
                             </div>
                         </GlassCard>
 
-                        <div className="flex flex-wrap justify-center gap-6">
-                            <a
-                                href="#projects"
-                                className="group relative px-8 py-4 rounded-lg bg-accent text-black font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,136,0.3)]"
-                            >
-                                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                                <span className="relative flex items-center gap-2">
-                                    INITIALIZE PROJECTS
-                                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
-                                </span>
-                            </a>
 
-                            <a
-                                href="#contact"
-                                className="group px-8 py-4 rounded-lg border border-white/20 hover:border-accent/50 hover:bg-accent/5 transition-all hover:scale-105 backdrop-blur-sm"
-                            >
-                                <span className="text-white group-hover:text-accent transition-colors font-semibold">
-                                    CONTACT PROTOCOL
-                                </span>
-                            </a>
-                        </div>
                     </motion.div>
                 </div>
             </div>

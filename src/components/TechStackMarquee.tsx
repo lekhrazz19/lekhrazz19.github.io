@@ -8,7 +8,7 @@ const techs = [
 
 const TechStackMarquee = () => {
     return (
-        <div className="w-full overflow-hidden border-b border-white/5 bg-black/20 backdrop-blur-sm absolute top-0 left-0 z-30">
+        <div className="w-full overflow-hidden border-b border-white/5 bg-black/20 backdrop-blur-sm relative z-30 mt-24 mb-8">
             <div className="flex select-none">
                 <motion.div
                     className="flex gap-8 py-3 whitespace-nowrap"
