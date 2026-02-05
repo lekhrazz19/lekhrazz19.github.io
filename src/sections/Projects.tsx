@@ -7,14 +7,6 @@ const Projects = () => {
             technologies: ["Kali Linux", "DVWA", "Burp Suite", "Metasploit", "VirtualBox"],
             highlights: ["SQL Injection exploitation", "XSS Attack vectors", "Authentication Bypass techniques", "Network traffic analysis"],
             github: "https://github.com/lekhrazz19/homelab"
-        },
-        {
-            title: "Portfolio 3.0 (Ecological)",
-            period: "2025",
-            description: "An experimental 3D portfolio visualization using React Three Fiber, exploring the metaphor of a digital ecosystem. (Archived/Previous Iteration)",
-            technologies: ["React Three Fiber", "TypeScript", "Procedural Generation", "WebGL"],
-            highlights: ["3D Scene Graph", "Organic shaders", "Interactive particle systems"],
-            github: null
         }
     ];
 
