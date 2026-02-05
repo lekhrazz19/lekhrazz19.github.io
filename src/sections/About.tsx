@@ -48,7 +48,7 @@ const About = () => {
                                 I'm <strong className="text-white">Lekhraj Singh</strong>, a Cybersecurity Researcher and Ethical Hacker with a passion for breaking secure systems to make them stronger.
                             </p>
                             <p>
-                                My journey began with curiosity—wondering how digital systems tick, and more importantly, how they break. Today, I specialize in <span className="text-accent">Web Application Security</span> and <span className="text-accent">Network Penetration Testing</span>.
+                                My journey began with curiosity—wondering how digital systems tick, and more importantly, how they break. Today, I specialize in <span className="text-accent">Web Application Security</span>
                             </p>
                             <p>
                                 When I'm not hunting vulnerabilities on Bugcrowd or analyzing malware in my homelab, I'm building tools to automate the offensive security workflow.
@@ -59,12 +59,9 @@ const About = () => {
                         <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10 mt-8">
                             <div>
                                 <h4 className="text-accent font-mono text-sm mb-1">CURRENT FOCUS</h4>
-                                <p className="text-white font-bold">Red Teaming & Cloud Sec</p>
+                                <p className="text-white font-bold">AI Security & Web Security</p>
                             </div>
-                            <div>
-                                <h4 className="text-accent font-mono text-sm mb-1">EXPERIENCE</h4>
-                                <p className="text-white font-bold">2+ Years in InfoSec</p>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
