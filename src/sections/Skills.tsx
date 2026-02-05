@@ -5,25 +5,25 @@ const Skills = () => {
         {
             title: "Application Security",
             skills: ["OWASP Top 10", "Secure Coding", "Web Security", "API Security"],
-            icon: "🛡️",
+            icon: "AS",
             color: "text-blue-400"
         },
         {
             title: "Penetration Testing",
             skills: ["Vulnerability Assessment", "Reconnaissance", "Manual Testing", "Exploitation"],
-            icon: "🔍",
+            icon: "PT",
             color: "text-purple-400"
         },
         {
             title: "Security Tools",
             skills: ["Burp Suite", "Nmap", "Metasploit", "Kali Linux", "Wireshark"],
-            icon: "⚙️",
+            icon: "ST",
             color: "text-pink-400"
         },
         {
             title: "Programming",
             skills: ["Python", "C/C++", "HTML/CSS", "JavaScript/TypeScript", "SQL"],
-            icon: "💻",
+            icon: "PR",
             color: "text-green-400"
         }
     ];
@@ -45,7 +45,7 @@ const Skills = () => {
                             delay={index * 0.1}
                             className="h-full"
                         >
-                            <div className={`text-4xl mb-6 ${category.color} bg-white/5 w-16 h-16 rounded-2xl flex items-center justify-center`}>
+                            <div className={`text-xs font-semibold tracking-wider mb-6 ${category.color} bg-white/5 w-16 h-16 rounded-2xl flex items-center justify-center`}>
                                 {category.icon}
                             </div>
                             <h3 className="text-xl font-bold mb-4">{category.title}</h3>

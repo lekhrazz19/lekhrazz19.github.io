@@ -58,7 +58,7 @@ const Projects = () => {
                                     <ul className="grid grid-cols-1 gap-2">
                                         {project.highlights.map((highlight, i) => (
                                             <li key={i} className="flex items-center text-sm text-slate-300">
-                                                <span className="mr-2 text-green-400">✓</span> {highlight}
+                                                <span className="mr-2 text-green-400">•</span> {highlight}
                                             </li>
                                         ))}
                                     </ul>

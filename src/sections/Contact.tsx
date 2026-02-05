@@ -20,8 +20,8 @@ const Contact = () => {
                         <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-2xl">
-                                    📍
+                                <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-xs font-semibold tracking-wider">
+                                    LOC
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-semibold text-slate-400 uppercase">Location</h4>
@@ -30,8 +30,8 @@ const Contact = () => {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-2xl">
-                                    📧
+                                <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-xs font-semibold tracking-wider">
+                                    MAIL
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-semibold text-slate-400 uppercase">Email</h4>
@@ -42,8 +42,8 @@ const Contact = () => {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-2xl">
-                                    💼
+                                <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-xs font-semibold tracking-wider">
+                                    SOC
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-semibold text-slate-400 uppercase">Social</h4>

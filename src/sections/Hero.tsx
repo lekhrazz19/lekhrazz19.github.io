@@ -18,7 +18,7 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="inline-block px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-accent text-sm font-medium mb-6 backdrop-blur-sm">
-                        👋 Welcome to my portfolio
+                        Welcome to my portfolio
                     </span>
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                         I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Lekhraj</span>
@@ -50,8 +50,8 @@ const Hero = () => {
                 >
                     <GlassCard className="max-w-md mx-auto relative z-20 !bg-slate-900/60 !border-white/20">
                         <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-xl">
-                                👨‍💻
+                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-sm font-semibold tracking-wider">
+                                LS
                             </div>
                             <div>
                                 <h3 className="font-bold text-white">Lekhraj Singh</h3>
@@ -89,16 +89,16 @@ const Hero = () => {
                     <motion.div
                         animate={{ y: [-10, 10, -10] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute -top-10 -right-10 w-20 h-20 glass rounded-2xl flex items-center justify-center text-3xl z-10"
+                        className="absolute -top-10 -right-10 w-20 h-20 glass rounded-2xl flex items-center justify-center text-sm font-semibold tracking-wider z-10"
                     >
-                        🛡️
+                        SEC
                     </motion.div>
                     <motion.div
                         animate={{ y: [10, -10, 10] }}
                         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        className="absolute -bottom-5 -left-5 w-16 h-16 glass rounded-2xl flex items-center justify-center text-2xl z-30"
+                        className="absolute -bottom-5 -left-5 w-16 h-16 glass rounded-2xl flex items-center justify-center text-xs font-semibold tracking-wider z-30"
                     >
-                        🔐
+                        LAB
                     </motion.div>
                 </motion.div>
             </div>
