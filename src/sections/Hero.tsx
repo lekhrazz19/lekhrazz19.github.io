@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import GlassCard from '../components/GlassCard';
+
 
 const Hero = () => {
     return (
@@ -8,7 +7,7 @@ const Hero = () => {
                 <div className="max-w-4xl mx-auto text-center">
                     {/* ASCII Art Logo */}
                     <pre className="ascii-art mb-8" style={{ color: 'var(--color-accent)' }}>
-{`
+                        {`
  ██      ███████ ██   ██ ██████   █████      ██ 
  ██      ██      ██  ██  ██   ██ ██   ██     ██ 
  ██      █████   █████   ██████  ███████     ██ 
