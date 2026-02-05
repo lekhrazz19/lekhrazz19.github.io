@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import GlassCard from '../components/GlassCard';
+
 import HackerText from '../components/HackerText';
 import TechStackMarquee from '../components/TechStackMarquee';
 
@@ -60,6 +60,18 @@ const Hero = () => {
                             <br className="hidden md:block" />
                             Uncovering <span className="text-accent">Zero-Day Vulnerabilities</span>
                         </p>
+
+                        <div className="mt-8 flex justify-center">
+                            <a href="#contact" className="relative z-[999] inline-flex items-center gap-3 px-8 py-4 rounded-full border-2 border-green-400 bg-zinc-900 shadow-[0_0_50px_rgba(34,197,94,0.5)] transition-transform hover:scale-105 duration-300 group">
+                                <span className="relative flex h-3 w-3">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-400 shadow-[0_0_15px_#4ade80]"></span>
+                                </span>
+                                <span className="text-base font-mono tracking-widest text-green-300 font-extrabold uppercase drop-shadow-md group-hover:text-green-200 transition-colors">
+                                    OPEN TO COLLABORATION
+                                </span>
+                            </a>
+                        </div>
                     </motion.div>
 
                     <motion.div
@@ -68,14 +80,7 @@ const Hero = () => {
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="flex flex-col items-center gap-10 relative z-50"
                     >
-                        <GlassCard className="p-1 inline-flex rounded-xl bg-white/5 border-white/10">
-                            <div className="flex items-center gap-6 px-8 py-4">
-                                <span className="flex items-center gap-2 text-sm font-mono text-slate-300">
-                                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_#22c55e]" />
-                                    OPEN TO COLLABORATION
-                                </span>
-                            </div>
-                        </GlassCard>
+
 
 
                     </motion.div>

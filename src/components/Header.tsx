@@ -46,7 +46,7 @@ const Header = () => {
                         <span className="text-accent font-mono font-bold">$</span>
                     </div>
                     <span className="font-bold tracking-tight text-white hidden md:block">
-                        lekhraj<span className="text-accent">.404</span>
+                        KENSHII
                     </span>
                 </a>
 

@@ -405,17 +405,22 @@ body {
 
 /* Enhanced GSAP Animations */
 .gsap-reveal {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  /* Was 0 */
+  transform: none;
+  /* Was translateY(40px) */
 }
 
 .gsap-stagger {
-  opacity: 0;
+  opacity: 1;
+  /* Was 0 */
 }
 
 .gsap-stagger-item {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  /* Was 0 */
+  transform: none;
+  /* Was translateY(30px) */
 }
 
 .gsap-float {

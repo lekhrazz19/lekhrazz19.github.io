@@ -28,33 +28,14 @@ function App() {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
+            start: 'top 90%',
+            toggleActions: 'play none none none',
           },
         }
       );
     });
 
-    gsap.utils.toArray<HTMLElement>('.gsap-stagger').forEach((group) => {
-      const items = group.querySelectorAll('.gsap-stagger-item');
-      if (!items.length) return;
-      gsap.fromTo(
-        items,
-        { autoAlpha: 0, y: 24 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.9,
-          ease: 'power3.out',
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: group,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-    });
+
 
     gsap.utils.toArray<HTMLElement>('.gsap-float').forEach((floatEl, index) => {
       gsap.to(floatEl, {
