@@ -5,11 +5,12 @@
 @tailwind utilities;
 
 @layer base {
+
   /* skills.sh Terminal/CLI Aesthetic */
   :root {
     --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'Geist Mono', 'Fira Code', 'JetBrains Mono', monospace;
-    
+
     /* skills.sh Color Palette */
     --color-bg: #000000;
     --color-surface: #0a0a0a;
@@ -29,21 +30,23 @@
     background: var(--color-bg);
   }
 
-  body {
-    @apply antialiased overflow-x-hidden;
-    background-color: var(--color-bg);
-    color: var(--color-text-primary);
-    font-family: var(--font-sans);
-  }
 
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.02em;
     color: var(--color-text-primary);
   }
 
-  p, li, span {
+  p,
+  li,
+  span {
     color: var(--color-text-primary);
   }
 
@@ -51,7 +54,8 @@
     color: var(--color-accent);
   }
 
-  code, pre {
+  code,
+  pre {
     font-family: var(--font-mono);
     background: var(--color-surface);
     color: var(--color-text-secondary);
@@ -59,6 +63,7 @@
 }
 
 @layer components {
+
   /* skills.sh Terminal Components */
   .terminal-card {
     @apply rounded-lg border bg-[#0a0a0a] p-6;
@@ -149,8 +154,9 @@
 
 body {
   @apply antialiased overflow-x-hidden selection:bg-accent/30 selection:text-white;
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg);
   color: var(--color-text-primary);
+  font-family: var(--font-sans);
   background-image:
     radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 30%),
     radial-gradient(circle at 90% 50%, rgba(157, 78, 221, 0.08) 0%, transparent 30%),
@@ -378,6 +384,7 @@ body {
     transform: scale(0.1);
     opacity: 0.9;
   }
+
   100% {
     transform: scale(1.5);
     opacity: 0;
@@ -423,10 +430,10 @@ body {
 
 /* Gradient Text Effect */
 .gradient-text {
-  background: linear-gradient(135deg, 
-    var(--color-accent-cyan) 0%,
-    var(--color-accent-magenta) 50%,
-    var(--color-accent-violet) 100%);
+  background: linear-gradient(135deg,
+      var(--color-accent-cyan) 0%,
+      var(--color-accent-magenta) 50%,
+      var(--color-accent-violet) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -434,9 +441,12 @@ body {
 }
 
 @keyframes gradient-shift {
-  0%, 100% {
+
+  0%,
+  100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -452,10 +462,10 @@ body {
   content: '';
   position: absolute;
   inset: -1px;
-  background: linear-gradient(135deg, 
-    var(--color-accent-cyan),
-    var(--color-accent-magenta),
-    var(--color-accent-violet));
+  background: linear-gradient(135deg,
+      var(--color-accent-cyan),
+      var(--color-accent-magenta),
+      var(--color-accent-violet));
   border-radius: inherit;
   opacity: 0;
   z-index: -1;
@@ -480,10 +490,10 @@ body {
 /* Premium Section Dividers */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent,
-    rgba(0, 212, 255, 0.3),
-    transparent);
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 212, 255, 0.3),
+      transparent);
   margin: 80px 0;
 }
 
@@ -494,9 +504,9 @@ body {
   font-family: var(--font-accent);
   font-weight: 600;
   letter-spacing: 0.5px;
-  background: linear-gradient(135deg, 
-    rgba(0, 212, 255, 0.1),
-    rgba(255, 0, 255, 0.05));
+  background: linear-gradient(135deg,
+      rgba(0, 212, 255, 0.1),
+      rgba(255, 0, 255, 0.05));
   border: 1px solid rgba(0, 212, 255, 0.3);
   color: var(--color-text-primary);
   border-radius: 8px;
@@ -509,9 +519,9 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, 
-    var(--color-accent-cyan),
-    var(--color-accent-magenta));
+  background: linear-gradient(135deg,
+      var(--color-accent-cyan),
+      var(--color-accent-magenta));
   opacity: 0;
   z-index: -1;
   transition: opacity 0.3s ease;

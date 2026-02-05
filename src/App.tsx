@@ -67,7 +67,7 @@ function App() {
   }, []);
 
   return (
-    <div className="antialiased text-slate-300 relative">
+    <div className="antialiased text-white relative">
       <ThreeJSBackground />
       <InteractiveClickEffect />
       <Header />
