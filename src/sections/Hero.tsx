@@ -48,58 +48,13 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="relative hidden md:block"
                 >
-                    <GlassCard className="max-w-md mx-auto relative z-20 !bg-slate-900/60 !border-white/20">
-                        <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-sm font-semibold tracking-wider">
-                                LS
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-white">Lekhraj Singh</h3>
-                                <p className="text-xs text-slate-400 font-mono">@lekhrazz19</p>
-                            </div>
+                    <div className="portrait-frame premium-ring">
+                        <div className="portrait-placeholder">
+                            <span>Professional Portrait</span>
                         </div>
-                        <div className="space-y-4 font-mono text-sm">
-                            <div className="flex items-center gap-3">
-                                <span className="text-green-400">➜</span>
-                                <span className="text-purple-400">const</span>
-                                <span className="text-blue-400">mission</span>
-                                <span className="text-white">=</span>
-                                <span className="text-orange-300">"Secure everything"</span>;
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <span className="text-green-400">➜</span>
-                                <span className="text-purple-400">let</span>
-                                <span className="text-blue-400">skills</span>
-                                <span className="text-white">=</span>
-                                <span className="text-white">[</span>
-                                <span className="text-orange-300">"Pentesting"</span>,
-                                <span className="text-orange-300">"Research"</span>
-                                <span className="text-white">]</span>;
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <span className="text-green-400">➜</span>
-                                <span className="text-white">launch(</span>
-                                <span className="text-blue-400">mission</span>
-                                <span className="text-white">)</span>;
-                            </div>
-                        </div>
-                    </GlassCard>
+                    </div>
 
-                    {/* Floating decorators */}
-                    <motion.div
-                        animate={{ y: [-10, 10, -10] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute -top-10 -right-10 w-20 h-20 glass rounded-2xl flex items-center justify-center text-sm font-semibold tracking-wider z-10"
-                    >
-                        SEC
-                    </motion.div>
-                    <motion.div
-                        animate={{ y: [10, -10, 10] }}
-                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        className="absolute -bottom-5 -left-5 w-16 h-16 glass rounded-2xl flex items-center justify-center text-xs font-semibold tracking-wider z-30"
-                    >
-                        LAB
-                    </motion.div>
+
                 </motion.div>
             </div>
         </section>

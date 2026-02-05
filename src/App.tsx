@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Hero from './sections/Hero';
+import Photos from './sections/Photos';
 import Skills from './sections/Skills';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Photos />
         <Skills />
         <Experience />
         <Projects />
