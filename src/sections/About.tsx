@@ -44,14 +44,17 @@ const About = () => {
                         </h2>
 
                         <div className="space-y-4 text-slate-300 leading-relaxed text-lg">
-                            <p>
-                                I'm <strong className="text-white">Lekhraj Singh</strong>, a Cybersecurity Researcher and Ethical Hacker with a passion for breaking secure systems to make them stronger.
+                            <p className="text-xl font-bold text-white mb-4">
+                                "Building tools. Breaking apps. Securing the web."
                             </p>
                             <p>
-                                My journey began with curiosity—wondering how digital systems tick, and more importantly, how they break. Today, I specialize in <span className="text-accent">Web Application Security</span>
+                                Hi, I’m <strong className="text-white">Lekhraj Singh</strong>, a Student and a Cybersecurity Researcher with a simple philosophy: <em>you can’t secure a system until you know exactly how to shatter it.</em>
                             </p>
                             <p>
-                                When I'm not hunting vulnerabilities on Bugcrowd or analyzing malware in my homelab, I'm building tools to automate the offensive security workflow.
+                                My journey began with simple curiosity—wondering how digital systems tick, and more importantly, why they stop ticking when I poke them. Today, I am specializing in <span className="text-accent">Web Application Security</span>, turning that curiosity into a career.
+                            </p>
+                            <p>
+                                Beyond breaking things, I believe in responsible disclosure and helping developers build resilient infrastructure. Whether it's hunting vulnerabilities or automating security workflows, I'm always ready for the next challenge.
                             </p>
                         </div>
 
