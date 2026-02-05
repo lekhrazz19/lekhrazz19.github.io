@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Header from './components/Header';
 import Hero from './sections/Hero';
+import About from './sections/About';
 
 import Photos from './sections/Photos';
 import Skills from './sections/Skills';
@@ -57,6 +58,7 @@ function App() {
       <Header />
       <main className="relative z-10">
         <Hero />
+        <About />
 
         <Photos />
         <Skills />
