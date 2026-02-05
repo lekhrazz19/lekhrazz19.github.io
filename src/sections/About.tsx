@@ -19,7 +19,7 @@ const About = () => {
                             <img
                                 src="/profile.jpg"
                                 alt="Lekhraj Singh"
-                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+                                className="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110"
                                 onError={(e) => {
                                     // Fallback if image doesn't exist
                                     (e.target as HTMLImageElement).src = '/profile.jpg';
