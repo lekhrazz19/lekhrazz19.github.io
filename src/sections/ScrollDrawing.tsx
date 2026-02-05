@@ -3,7 +3,7 @@ import ScrollMagic from 'scrollmagic';
 
 const ScrollDrawing = () => {
     const pathRef = useRef<SVGPathElement | null>(null);
-    const controllerRef = useRef<ScrollMagic.Controller | null>(null);
+    const controllerRef = useRef<any>(null);
 
     useEffect(() => {
         const path = pathRef.current;
@@ -13,10 +13,10 @@ const ScrollDrawing = () => {
         path.style.strokeDasharray = `${length}`;
         path.style.strokeDashoffset = `${length}`;
 
-        const controller = new ScrollMagic.Controller();
+        const controller = new (ScrollMagic as any).Controller();
         controllerRef.current = controller;
 
-        const scene = new ScrollMagic.Scene({
+        const scene = new (ScrollMagic as any).Scene({
             triggerElement: '#scroll-drawing',
             triggerHook: 0.8,
             duration: 500,

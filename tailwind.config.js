@@ -7,19 +7,19 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#2563eb', // Blue
-                secondary: '#8b5cf6', // Purple
-                dark: '#0f172a', // Slate 900
-                light: '#f8fafc', // Slate 50
-                accent: '#06b6d4' // Cyan
+                primary: '#00ff88',
+                secondary: '#00cc6a',
+                dark: '#000000',
+                surface: '#0a0a0a',
+                border: '#1a1a1a',
+                light: '#ffffff',
+                accent: '#00ff88',
+                'text-secondary': '#a1a1a1',
+                'text-muted': '#666666',
             },
             fontFamily: {
-                heading: ['Playfair Display', 'serif'],
-                primary: ['Manrope', 'sans-serif'],
-                body: ['Open Sans', 'sans-serif'],
-                accent: ['Inter', 'sans-serif'],
-                sans: ['Manrope', 'sans-serif'],
-                code: ['JetBrains Mono', 'monospace'],
+                sans: ['Geist', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+                mono: ['Geist Mono', 'Fira Code', 'JetBrains Mono', 'monospace'],
             },
             animation: {
                 'fade-in': 'fadeIn 0.6s ease-out forwards',

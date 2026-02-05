@@ -9,6 +9,8 @@ import Skills from './sections/Skills';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+import ThreeJSBackground from './components/ThreeJSBackground';
+import InteractiveClickEffect from './components/InteractiveClickEffect';
 
 function App() {
   useEffect(() => {
@@ -65,9 +67,9 @@ function App() {
   }, []);
 
   return (
-    <div className="antialiased text-slate-300">
+    <div className="antialiased relative">
       <Header />
-      <main>
+      <main className="relative">
         <Hero />
         <ScrollDrawing />
         <Photos />
