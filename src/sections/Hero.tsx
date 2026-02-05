@@ -56,9 +56,7 @@ const Hero = () => {
                         </h1>
 
                         <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                            Architecting <span className="text-white font-semibold">Resilient Digital Fortresses</span> &
-                            <br className="hidden md:block" />
-                            Uncovering <span className="text-accent">Zero-Day Vulnerabilities</span>
+                            Protecting your data from becoming <span className="text-accent font-semibold">Public Property</span>.
                         </p>
 
                         <div className="mt-8 flex justify-center">

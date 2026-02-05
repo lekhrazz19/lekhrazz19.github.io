@@ -58,25 +58,7 @@ const Skills = () => {
                     ))}
                 </div>
 
-                <div className="mt-16 border-t border-border pt-12">
-                    <h3 className="text-xl font-semibold mb-8">
-                        <span style={{ color: 'var(--color-accent)' }}>$</span> languages --version
-                    </h3>
-                    <div className="grid md:grid-cols-3 gap-4 text-sm">
-                        <div className="border border-border rounded p-4 hover:border-accent/60 transition-colors">
-                            <div className="text-slate-400 mb-2">Python</div>
-                            <div className="text-accent font-mono">3.9+</div>
-                        </div>
-                        <div className="border border-border rounded p-4 hover:border-accent/60 transition-colors">
-                            <div className="text-slate-400 mb-2">JavaScript/TypeScript</div>
-                            <div className="text-accent font-mono">ES2022+</div>
-                        </div>
-                        <div className="border border-border rounded p-4 hover:border-accent/60 transition-colors">
-                            <div className="text-slate-400 mb-2">C/C++</div>
-                            <div className="text-accent font-mono">C++17</div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
     );
