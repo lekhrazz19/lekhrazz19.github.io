@@ -1,5 +1,3 @@
-import GlassCard from '../components/GlassCard';
-
 const Experience = () => {
     const experiences = [
         {
@@ -27,53 +25,47 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="py-20 bg-black/20 gsap-reveal">
+        <section id="experience" className="py-20 gsap-reveal">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Work <span className="text-secondary">Experience</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        <span style={{ color: 'var(--color-accent)' }}>$</span> work --history
+                    </h2>
                     <p className="text-slate-400 max-w-2xl mx-auto">
                         My professional journey in the field of cybersecurity and ethical hacking.
                     </p>
                 </div>
 
-                <div className="max-w-3xl mx-auto relative">
-                    {/* Timeline Line */}
-                    <div className="absolute left-[20px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-transparent md:left-1/2 md:-translate-x-1/2"></div>
-
-                    <div className="space-y-12 gsap-stagger">
-                        {experiences.map((exp, index) => (
-                            <div key={index} className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-8`}>
-
-                                {/* Timeline Dot */}
-                                <div className="absolute left-[11px] top-6 w-5 h-5 rounded-full bg-dark border-4 border-accent z-10 md:left-1/2 md:-translate-x-1/2 md:top-6 shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
-
-                                {/* Content */}
-                                <div className="w-full md:w-1/2 pl-12 md:pl-0">
-                                    <GlassCard
-                                        className={`md:mx-8 gsap-stagger-item ${index % 2 === 0 ? 'text-left' : 'text-left md:text-right'}`}
-                                        delay={index * 0.2}
-                                    >
-                                        <div className={`flex flex-col mb-4 ${index % 2 === 0 ? 'align-start' : 'md:items-end'}`}>
-                                            <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                                            <span className="text-primary font-medium">{exp.company}</span>
-                                            <div className="flex gap-4 text-xs text-slate-400 mt-1 font-mono">
-                                                <span>{exp.period}</span>
-                                                <span>•</span>
-                                                <span>{exp.location}</span>
-                                            </div>
-                                        </div>
-                                        <ul className={`space-y-2 text-sm text-slate-300 ${index % 2 === 0 ? '' : 'md:flex md:flex-col md:items-end'}`}>
-                                            {exp.points.map((point, i) => (
-                                                <li key={i} className="leading-relaxed">
-                                                    • {point}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </GlassCard>
+                <div className="max-w-3xl mx-auto space-y-8 gsap-stagger">
+                    {experiences.map((exp, index) => (
+                        <div
+                            key={index}
+                            className="gsap-stagger-item border-l-2 border-accent pl-6 hover:border-accent/80 transition-colors duration-300"
+                        >
+                            <div className="mb-4">
+                                <div className="flex items-center gap-2 mb-1">
+                                    <span style={{ color: 'var(--color-accent)' }} className="text-lg">›</span>
+                                    <h3 className="text-2xl font-bold">{exp.role}</h3>
+                                </div>
+                                <div className="ml-6 flex flex-wrap gap-3 text-sm">
+                                    <span className="text-accent font-mono">{exp.company}</span>
+                                    <span className="text-slate-500">•</span>
+                                    <span className="text-slate-400">{exp.period}</span>
+                                    <span className="text-slate-500">•</span>
+                                    <span className="text-slate-400">{exp.location}</span>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+
+                            <ul className="ml-6 space-y-2">
+                                {exp.points.map((point, i) => (
+                                    <li key={i} className="text-slate-300 text-sm flex gap-3">
+                                        <span style={{ color: 'var(--color-accent)' }} className="flex-shrink-0">-</span>
+                                        <span>{point}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

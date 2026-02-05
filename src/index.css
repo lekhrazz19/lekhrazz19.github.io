@@ -40,10 +40,21 @@
     font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  p, li, span {
+    color: var(--color-text-primary);
+  }
+
+  a {
+    color: var(--color-accent);
   }
 
   code, pre {
     font-family: var(--font-mono);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
   }
 }
 
@@ -60,14 +71,17 @@
   }
 
   .code-block {
-    @apply rounded-md bg-[#0a0a0a] border p-4 font-mono text-sm;
+    @apply rounded-md border p-4 font-mono text-sm;
+    background: var(--color-surface);
     border-color: var(--color-border);
     color: var(--color-text-secondary);
+    display: inline-block;
   }
 
   .code-block .prompt {
     color: var(--color-accent);
     margin-right: 8px;
+    font-weight: 600;
   }
 
   .btn-terminal {
@@ -80,16 +94,19 @@
   .btn-terminal:hover {
     border-color: var(--color-accent);
     color: var(--color-accent);
+    background: rgba(0, 255, 136, 0.05);
   }
 
   .btn-primary-terminal {
     @apply px-6 py-3 rounded-md font-medium text-sm transition-all duration-200;
     background: var(--color-accent);
     color: var(--color-bg);
+    font-weight: 700;
   }
 
   .btn-primary-terminal:hover {
     background: var(--color-accent-dim);
+    transform: translateY(-2px);
   }
 
   .skill-card {
@@ -106,9 +123,11 @@
   .ascii-art {
     font-family: var(--font-mono);
     line-height: 1.2;
-    color: var(--color-text-primary);
+    color: var(--color-accent);
     white-space: pre;
-    font-size: clamp(8px, 1.5vw, 16px);
+    font-size: clamp(12px, 2vw, 24px);
+    font-weight: 600;
+    margin: 0;
   }
 
   .stats-badge {

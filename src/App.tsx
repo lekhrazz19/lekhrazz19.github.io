@@ -67,9 +67,11 @@ function App() {
   }, []);
 
   return (
-    <div className="antialiased relative">
+    <div className="antialiased text-slate-300 relative">
+      <ThreeJSBackground />
+      <InteractiveClickEffect />
       <Header />
-      <main className="relative">
+      <main className="relative z-10">
         <Hero />
         <ScrollDrawing />
         <Photos />

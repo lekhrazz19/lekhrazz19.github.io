@@ -7,7 +7,7 @@ const Hero = () => {
             <div className="container mx-auto px-6">
                 <div className="max-w-4xl mx-auto text-center">
                     {/* ASCII Art Logo */}
-                    <pre className="ascii-art mb-8">
+                    <pre className="ascii-art mb-8" style={{ color: 'var(--color-accent)' }}>
 {`
  ██      ███████ ██   ██ ██████   █████      ██ 
  ██      ██      ██  ██  ██   ██ ██   ██     ██ 
@@ -17,14 +17,9 @@ const Hero = () => {
 `}
                     </pre>
 
-                    {/* Tagline */}
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                        CYBERSECURITY RESEARCHER
-                    </h1>
-
                     <p className="text-lg md:text-xl mb-8" style={{ color: 'var(--color-text-secondary)' }}>
-                        Building secure digital ecosystems and uncovering vulnerabilities <br />
-                        before the bad guys do.
+                        Cybersecurity Researcher & Ethical Hacker<br />
+                        Building secure digital ecosystems and uncovering vulnerabilities before the bad guys do.
                     </p>
 
                     {/* Install Command */}
