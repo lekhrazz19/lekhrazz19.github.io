@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import GlassCard from '../components/GlassCard';
 import HackerText from '../components/HackerText';
-import StatusTicker from '../components/StatusTicker';
+import TechStackMarquee from '../components/TechStackMarquee';
+
 
 const Hero = () => {
     const titleRef = useRef<HTMLHeadingElement>(null);
@@ -23,6 +24,9 @@ const Hero = () => {
 
     return (
         <section className="min-h-screen flex flex-col justify-center relative pt-20 overflow-hidden">
+            {/* Tech Stack Marquee at the top */}
+            <TechStackMarquee />
+
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -44,10 +48,10 @@ const Hero = () => {
                             className="text-6xl md:text-8xl font-bold tracking-tight mb-8 transition-transform duration-100 ease-out flex flex-col md:block"
                         >
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400 mr-0 md:mr-4">
-                                <HackerText text="LEKHRAZZ" speed={50} />
+                                <HackerText text="LEKHRAJ" speed={50} />
                             </span>
                             <span className="text-accent">
-                                <HackerText text=".19" speed={80} />
+                                <HackerText text=".404" speed={80} />
                             </span>
                         </h1>
 
@@ -69,10 +73,6 @@ const Hero = () => {
                                 <span className="flex items-center gap-2 text-sm font-mono text-slate-300">
                                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_#22c55e]" />
                                     OPEN TO COLLABORATION
-                                </span>
-                                <div className="h-4 w-px bg-white/20" />
-                                <span className="text-sm font-mono text-slate-300">
-                                    BASED IN INDIA
                                 </span>
                             </div>
                         </GlassCard>
@@ -104,10 +104,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Status Ticker located at bottom */}
-            <div className="relative z-20 mt-auto">
-                <StatusTicker />
-            </div>
+
 
             {/* Decorative Grid */}
             <div className="absolute bottom-10 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-10" />
