@@ -29,7 +29,7 @@ const About = () => {
                             {/* Cyber Overlay Details */}
                             <div className="absolute bottom-4 left-4 z-20 font-mono text-xs text-accent">
                                 <div className="flex flex-col gap-1">
-                                    <span>ID: KENSHII_404</span>
+                                    <span>ID: KENSHII</span>
                                     <span>STATUS: ONLINE</span>
                                     <span>LOC: INDIA</span>
                                 </div>
