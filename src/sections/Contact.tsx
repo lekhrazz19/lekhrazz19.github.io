@@ -100,7 +100,7 @@ const Contact = () => {
 
             <footer className="mt-20 py-8 text-center text-slate-500 text-sm border-t border-border">
                 <p className="text-slate-400">© {new Date().getFullYear()} Lekhraj Singh. All Rights Reserved.</p>
-                <p className="mt-2 text-xs text-slate-600">Made with 💚, ☕, and a healthy dose of <span style={{ color: 'var(--color-accent)' }}>StackOverflow</span></p>
+                <p className="mt-2 text-xs text-slate-600">Protected by <span style={{ color: 'var(--color-accent)' }}>127.0.0.1</span> and a hope.</p>
             </footer>
         </section>
     );
