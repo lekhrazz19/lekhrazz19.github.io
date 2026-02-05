@@ -22,7 +22,7 @@ const About = () => {
                                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
                                 onError={(e) => {
                                     // Fallback if image doesn't exist
-                                    (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=Lekhraj+Singh&background=0D1117&color=00ff88&size=512';
+                                    (e.target as HTMLImageElement).src = '/profile.jpg';
                                 }}
                             />
 
@@ -61,7 +61,7 @@ const About = () => {
                                 <h4 className="text-accent font-mono text-sm mb-1">CURRENT FOCUS</h4>
                                 <p className="text-white font-bold">AI Security & Web Security</p>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
