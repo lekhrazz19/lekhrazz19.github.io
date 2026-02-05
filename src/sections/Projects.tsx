@@ -19,7 +19,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="py-20">
+        <section id="projects" className="py-20 gsap-reveal">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured <span className="text-accent">Projects</span></h2>
@@ -28,9 +28,9 @@ const Projects = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto gsap-stagger">
                     {projects.map((project, index) => (
-                        <GlassCard key={index} delay={index * 0.2} className="flex flex-col">
+                        <GlassCard key={index} delay={index * 0.2} className="flex flex-col gsap-stagger-item">
                             <div className="mb-4">
                                 <div className="flex justify-between items-start mb-2">
                                     <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">{project.title}</h3>

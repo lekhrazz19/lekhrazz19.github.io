@@ -1,6 +1,6 @@
 const Photos = () => {
     return (
-        <section id="articles" className="py-20 relative">
+        <section id="articles" className="py-20 relative gsap-reveal">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -11,8 +11,8 @@ const Photos = () => {
                     </p>
                 </div>
 
-                <div className="article-grid">
-                    <article className="article-card premium-ring">
+                <div className="article-grid gsap-stagger">
+                    <article className="article-card premium-ring gsap-stagger-item">
                         <div className="article-card__content">
                             <p className="article-meta">Research · Jan 2026</p>
                             <h3>Deep Dive: Web Security Misconfigurations</h3>
@@ -24,7 +24,7 @@ const Photos = () => {
                         </div>
                     </article>
 
-                    <article className="article-card premium-ring">
+                    <article className="article-card premium-ring gsap-stagger-item">
                         <div className="article-card__content">
                             <p className="article-meta">Case Study · Dec 2025</p>
                             <h3>API Security: Threat Modeling in Practice</h3>
@@ -36,7 +36,7 @@ const Photos = () => {
                         </div>
                     </article>
 
-                    <article className="article-card premium-ring">
+                    <article className="article-card premium-ring gsap-stagger-item">
                         <div className="article-card__content">
                             <p className="article-meta">Notes · Nov 2025</p>
                             <h3>Burp Suite Workflow: Efficiency Patterns</h3>

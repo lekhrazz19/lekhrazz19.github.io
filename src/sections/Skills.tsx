@@ -29,7 +29,7 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="py-20 relative">
+        <section id="skills" className="py-20 relative gsap-reveal">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & <span className="text-primary">Expertise</span></h2>
@@ -38,12 +38,12 @@ const Skills = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 gsap-stagger">
                     {skillCategories.map((category, index) => (
                         <GlassCard
                             key={index}
                             delay={index * 0.1}
-                            className="h-full"
+                            className="h-full gsap-stagger-item"
                         >
                             <div className={`text-xs font-semibold tracking-wider mb-6 ${category.color} bg-white/5 w-16 h-16 rounded-2xl flex items-center justify-center`}>
                                 {category.icon}

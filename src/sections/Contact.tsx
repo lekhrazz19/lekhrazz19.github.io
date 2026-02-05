@@ -2,7 +2,7 @@ import GlassCard from '../components/GlassCard';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-20 relative overflow-hidden">
+        <section id="contact" className="py-20 relative overflow-hidden gsap-reveal">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none"></div>
 
@@ -20,12 +20,12 @@ const Contact = () => {
                         <p className="text-slate-400 mb-10">
                             Choose a channel below for a direct conversation.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4">
+                        <div className="flex flex-wrap justify-center gap-4 gsap-stagger">
                             <a
                                 href="https://linkedin.com/in/lekhrazz19"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="social-button"
+                                className="social-button gsap-stagger-item"
                                 aria-label="LinkedIn"
                             >
                                 <span className="social-icon">
@@ -40,7 +40,7 @@ const Contact = () => {
                                 href="https://github.com/lekhrazz19"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="social-button"
+                                className="social-button gsap-stagger-item"
                                 aria-label="GitHub"
                             >
                                 <span className="social-icon">
@@ -53,7 +53,7 @@ const Contact = () => {
 
                             <a
                                 href="mailto:singhlekhraj497@gmail.com"
-                                className="social-button"
+                                className="social-button gsap-stagger-item"
                                 aria-label="Gmail"
                             >
                                 <span className="social-icon">

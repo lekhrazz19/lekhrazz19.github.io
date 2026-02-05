@@ -27,7 +27,7 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="py-20 bg-black/20">
+        <section id="experience" className="py-20 bg-black/20 gsap-reveal">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Work <span className="text-secondary">Experience</span></h2>
@@ -40,7 +40,7 @@ const Experience = () => {
                     {/* Timeline Line */}
                     <div className="absolute left-[20px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-transparent md:left-1/2 md:-translate-x-1/2"></div>
 
-                    <div className="space-y-12">
+                    <div className="space-y-12 gsap-stagger">
                         {experiences.map((exp, index) => (
                             <div key={index} className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-8`}>
 
@@ -50,7 +50,7 @@ const Experience = () => {
                                 {/* Content */}
                                 <div className="w-full md:w-1/2 pl-12 md:pl-0">
                                     <GlassCard
-                                        className={`md:mx-8 ${index % 2 === 0 ? 'text-left' : 'text-left md:text-right'}`}
+                                        className={`md:mx-8 gsap-stagger-item ${index % 2 === 0 ? 'text-left' : 'text-left md:text-right'}`}
                                         delay={index * 0.2}
                                     >
                                         <div className={`flex flex-col mb-4 ${index % 2 === 0 ? 'align-start' : 'md:items-end'}`}>

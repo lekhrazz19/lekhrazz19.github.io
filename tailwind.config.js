@@ -14,7 +14,11 @@ export default {
                 accent: '#06b6d4' // Cyan
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
+                heading: ['Playfair Display', 'serif'],
+                primary: ['Manrope', 'sans-serif'],
+                body: ['Open Sans', 'sans-serif'],
+                accent: ['Inter', 'sans-serif'],
+                sans: ['Manrope', 'sans-serif'],
                 code: ['JetBrains Mono', 'monospace'],
             },
             animation: {

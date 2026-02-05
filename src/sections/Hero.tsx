@@ -3,12 +3,12 @@ import GlassCard from '../components/GlassCard';
 
 const Hero = () => {
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 gsap-reveal">
             {/* Background elements */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-float" />
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[120px]" />
+                <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-float gsap-float" />
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] animate-float gsap-float" style={{ animationDelay: '2s' }} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[120px] gsap-float" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
