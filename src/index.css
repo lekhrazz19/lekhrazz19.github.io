@@ -1,24 +1,49 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer components {
+  .glass {
+    @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-xl;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl p-6 transition-all duration-300 hover:bg-slate-800/50 hover:border-white/20 hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .nav-link {
+    @apply text-slate-300 hover:text-white transition-colors duration-200 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-primary hover:bg-blue-600 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 glass hover:bg-white/10 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg active:scale-95;
+  }
+
+  .tech-tag {
+    @apply px-3 py-1 text-sm rounded-full bg-slate-800/50 border border-slate-700 text-slate-300;
+  }
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  overflow: hidden;
-  /* Prevent scrolling on the body */
+  @apply bg-dark text-slate-100 antialiased overflow-x-hidden selection:bg-accent/30 selection:text-white;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 30% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 20%);
+  background-attachment: fixed;
 }

@@ -3,9 +3,9 @@ export interface ContentNode {
     label: string;
     subLabel: string;
     type: 'education' | 'experience' | 'project' | 'skill';
-    element: string; // Chemical element metaphor
+    species: string; // Biological classification
     description: string;
-    electrons: string[]; // Orbiting items
+    symbionts: string[]; // Connected entities (formerly electrons)
     color: string;
     position: [number, number, number];
 }
@@ -13,46 +13,46 @@ export interface ContentNode {
 export const cosmosData: ContentNode[] = [
     {
         id: 'edu-main',
-        label: 'EDUCATION',
-        subLabel: 'Carbon Base',
+        label: 'Wisdom Root',
+        subLabel: 'Foundational Knowledge',
         type: 'education',
-        element: 'Carbon',
-        description: 'Foundational structures of knowledge.',
-        electrons: ['Computer Networks', 'Cybersecurity', 'Theory', 'Research'],
-        color: '#4488ff', // Blue
+        species: 'Quercus Aeterna (Eternal Oak)',
+        description: 'The deep-rooted knowledge base that sustains the ecosystem. Nourished by continuous learning and academic rigor.',
+        symbionts: ['Computer Science', 'Cybersecurity Ops', 'Network Theory', 'Research Methodology'],
+        color: '#4caf50', // Forest Green
         position: [0, 5, -20]
     },
     {
         id: 'exp-main',
-        label: 'EXPERIENCE',
-        subLabel: 'Silicon Conductor',
+        label: 'Path of the Fox',
+        subLabel: 'Professional Journey',
         type: 'experience',
-        element: 'Silicon',
-        description: 'Conductive pathways of professional practice.',
-        electrons: ['Bugcrowd', 'HackerHub8', 'Defense', 'Ops'],
-        color: '#ff4444', // Red
+        species: 'Vulpes Technica',
+        description: 'Adaptive strategies learned through survival in the wild digital frontier. Represents agility and practical security auditing.',
+        symbionts: ['Bugcrowd Hunter', 'HackerHub8 Red Team', 'Defense Mechanisms', 'Incident Response'],
+        color: '#ff9800', // Fox Orange
         position: [15, -2, -25]
     },
     {
         id: 'proj-main',
-        label: 'PROJECTS',
-        subLabel: 'Germanium Transformer',
+        label: 'Flora of Creation',
+        subLabel: 'Project Ecosystem',
         type: 'project',
-        element: 'Germanium',
-        description: 'Transformative applications of energy.',
-        electrons: ['Quantum Dots', 'Innovation', 'Code', 'Tools'],
-        color: '#44ff88', // Green
+        species: 'Digitalis Purpurea',
+        description: 'The blooming applications of creative energy. Each flower represents a solved problem or a built system.',
+        symbionts: ['Quantum Encyrption', 'Generative AI', 'React Systems', '3D WebGL'],
+        color: '#e91e63', // Floral Pink
         position: [-15, -5, -30]
     },
     {
         id: 'skill-main',
-        label: 'SKILLS',
-        subLabel: 'Graphene Lattice',
+        label: 'Mycelial Web',
+        subLabel: 'Interconnected Skills',
         type: 'skill',
-        element: 'Graphene',
-        description: 'Two-dimensional hexagonal lattice of pure ability.',
-        electrons: ['Hexagonal Lattice', 'Electron Mobility', 'Strength', 'Speed'],
-        color: '#aa44ff', // Purple
+        species: 'Network Fungi',
+        description: 'The invisible underground network that connects all disparate technologies into a cohesive whole.',
+        symbionts: ['Penetration Testing', 'Full Stack Dev', 'Cloud Arch', 'Machine Learning'],
+        color: '#9c27b0', // Mycelium Purple
         position: [0, -10, -15]
     }
 ];
