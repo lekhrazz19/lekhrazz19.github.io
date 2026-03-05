@@ -1,6 +1,17 @@
 const Experience = () => {
     const experiences = [
         {
+            company: "Cryptonic Area",
+            role: "Security Intern",
+            period: "Feb 2026 - Mar 2026",
+            location: "Remote",
+            points: [
+                "Developed a Vulnerability Research & Reporting System (VRRS): Built custom Python automation tools (scanners, fuzzers) and Docker-containerized labs to ethically discover and report vulnerabilities using CVSS-aligned documentation.",
+                "Architected SOC-in-a-Box (Security Monitoring & IR): Created detection rules (Sigma, Splunk SPL), automated attack simulations via Python, and designed Incident Response playbooks mapping to MITRE ATT&CK techniques.",
+                "Engineered SecureTodo (AppSec): A secure Python/Flask web application defending against OWASP Top 10 vulnerabilities, featuring pbkdf2 password hashing, anti-SQLi ORM query structuring, and XSS neutralization."
+            ]
+        },
+        {
             company: "Bugcrowd",
             role: "Security Researcher",
             period: "Jun 2025 - Present",
