@@ -22,7 +22,7 @@ const Projects = () => {
             description: "Engineered a secure Python/Flask web application designed specifically to defend against the OWASP Top 10 vulnerabilities. Implemented secure authentication, robust data protection, and hardened browser security headers.",
             technologies: ["Python", "Flask", "SQLite", "AppSec"],
             highlights: ["pbkdf2:sha256 password hashing with salting", "Anti-SQL Injection via Flask-SQLAlchemy ORM", "Strict Jinja2 XSS neutralization and auto-escaping", "Secure session management (HttpOnly, SameSite=Lax)"],
-            github: "https://github.com/lekhrazz19/SecureTodo"
+            github: "https://github.com/lekhrazz19/Secure-ToDo-App"
         },
         {
             title: "Cybersecurity Homelab",
