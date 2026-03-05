@@ -72,7 +72,7 @@ const Header = () => {
                         <a
                             href="/resume.pdf"
                             target="_blank"
-                            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-black hover:bg-white transition-all text-xs font-bold uppercase tracking-wider"
+                            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 text-black hover:bg-emerald-400 transition-all text-xs font-bold uppercase tracking-wider"
                         >
                             <span>Resume</span>
                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
@@ -116,7 +116,7 @@ const Header = () => {
                             href="/resume.pdf"
                             target="_blank"
                             onClick={() => setIsOpen(false)}
-                            className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-accent text-black font-bold uppercase tracking-wider hover:bg-white transition-colors"
+                            className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-500 text-black font-bold uppercase tracking-wider hover:bg-emerald-400 transition-colors"
                         >
                             <span>Download Resume</span>
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
