@@ -73,12 +73,12 @@ const Header = () => {
                             href="/resume.pdf"
                             target="_blank"
                             animate={{ 
-                                boxShadow: ["0px 0px 0px rgba(16, 185, 129, 0)", "0px 0px 20px rgba(16, 185, 129, 0.6)", "0px 0px 0px rgba(16, 185, 129, 0)"] 
+                                boxShadow: ["0px 0px 0px rgba(255, 0, 255, 0)", "0px 0px 20px rgba(255, 0, 255, 0.6)", "0px 0px 0px rgba(255, 0, 255, 0)"] 
                             }}
                             transition={{ repeat: Infinity, duration: 2 }}
                             whileHover={{ scale: 1.05, filter: "brightness(1.2)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 text-black text-xs font-bold uppercase tracking-wider relative overflow-hidden group border border-emerald-400"
+                            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-fuchsia-500 text-white text-xs font-bold uppercase tracking-wider relative overflow-hidden group border border-fuchsia-400"
                         >
                             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-500 ease-in-out"></span>
                             <span className="relative z-10">Resume</span>
@@ -124,11 +124,11 @@ const Header = () => {
                             target="_blank"
                             onClick={() => setIsOpen(false)}
                             animate={{ 
-                                boxShadow: ["0px 0px 0px rgba(16, 185, 129, 0)", "0px 0px 20px rgba(16, 185, 129, 0.6)", "0px 0px 0px rgba(16, 185, 129, 0)"] 
+                                boxShadow: ["0px 0px 0px rgba(255, 0, 255, 0)", "0px 0px 20px rgba(255, 0, 255, 0.6)", "0px 0px 0px rgba(255, 0, 255, 0)"] 
                             }}
                             transition={{ repeat: Infinity, duration: 2 }}
                             whileTap={{ scale: 0.95 }}
-                            className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-500 text-black font-bold uppercase tracking-wider overflow-hidden relative group border border-emerald-400 hover:brightness-110 transition-all"
+                            className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-fuchsia-500 text-white font-bold uppercase tracking-wider overflow-hidden relative group border border-fuchsia-400 hover:brightness-110 transition-all"
                         >
                             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-500 ease-in-out"></span>
                             <span className="relative z-10">Download Resume</span>
