@@ -69,14 +69,21 @@ const Header = () => {
 
                     {/* Action Button */}
                     <div className="flex items-center gap-4">
-                        <a
+                        <motion.a
                             href="/resume.pdf"
                             target="_blank"
-                            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 text-black hover:bg-emerald-400 transition-all text-xs font-bold uppercase tracking-wider"
+                            animate={{ 
+                                boxShadow: ["0px 0px 0px rgba(16, 185, 129, 0)", "0px 0px 20px rgba(16, 185, 129, 0.6)", "0px 0px 0px rgba(16, 185, 129, 0)"] 
+                            }}
+                            transition={{ repeat: Infinity, duration: 2 }}
+                            whileHover={{ scale: 1.05, filter: "brightness(1.2)" }}
+                            whileTap={{ scale: 0.95 }}
+                            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 text-black text-xs font-bold uppercase tracking-wider relative overflow-hidden group border border-emerald-400"
                         >
-                            <span>Resume</span>
-                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                        </a>
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-500 ease-in-out"></span>
+                            <span className="relative z-10">Resume</span>
+                            <svg className="w-3 h-3 relative z-10 group-hover:translate-y-[1px] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                        </motion.a>
 
                         {/* Mobile Menu Toggle */}
                         <button
@@ -112,15 +119,21 @@ const Header = () => {
                                 <span className="text-accent mr-2">//</span> {link.name}
                             </a>
                         ))}
-                        <a
+                        <motion.a
                             href="/resume.pdf"
                             target="_blank"
                             onClick={() => setIsOpen(false)}
-                            className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-500 text-black font-bold uppercase tracking-wider hover:bg-emerald-400 transition-colors"
+                            animate={{ 
+                                boxShadow: ["0px 0px 0px rgba(16, 185, 129, 0)", "0px 0px 20px rgba(16, 185, 129, 0.6)", "0px 0px 0px rgba(16, 185, 129, 0)"] 
+                            }}
+                            transition={{ repeat: Infinity, duration: 2 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-500 text-black font-bold uppercase tracking-wider overflow-hidden relative group border border-emerald-400 hover:brightness-110 transition-all"
                         >
-                            <span>Download Resume</span>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                        </a>
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-500 ease-in-out"></span>
+                            <span className="relative z-10">Download Resume</span>
+                            <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                        </motion.a>
                     </div>
                 </motion.div>
             )}
