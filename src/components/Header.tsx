@@ -73,16 +73,18 @@ const Header = () => {
                             href="/resume.pdf"
                             target="_blank"
                             animate={{ 
-                                boxShadow: ["0px 0px 0px rgba(0, 212, 255, 0)", "0px 0px 20px rgba(0, 212, 255, 0.6)", "0px 0px 0px rgba(0, 212, 255, 0)"] 
+                                boxShadow: ["0px 0px 0px rgba(0, 255, 136, 0)", "0px 0px 15px rgba(0, 255, 136, 0.3)", "0px 0px 0px rgba(0, 255, 136, 0)"] 
                             }}
                             transition={{ repeat: Infinity, duration: 2 }}
-                            whileHover={{ scale: 1.05, filter: "brightness(1.2)" }}
+                            whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-400 text-black text-xs font-bold uppercase tracking-wider relative overflow-hidden group border border-cyan-300"
+                            className="hidden md:flex items-center gap-2 px-4 py-2 rounded bg-black/90 text-[#00ff88] text-xs font-mono font-bold tracking-widest relative group border border-[#00ff88]/40 hover:bg-[#00ff88] hover:text-black hover:border-[#00ff88] hover:shadow-[0_0_20px_rgba(0,255,136,0.6)] transition-all duration-300"
                         >
-                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-500 ease-in-out"></span>
-                            <span className="relative z-10">Resume</span>
-                            <svg className="w-3 h-3 relative z-10 group-hover:translate-y-[1px] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                            <span className="relative z-10 flex items-center">
+                                <span className="text-[#00ff88] group-hover:text-black mr-2">&gt;</span>
+                                RESUME
+                                <span className="w-1.5 h-3.5 bg-[#00ff88] group-hover:bg-black inline-block ml-1 animate-pulse"></span>
+                            </span>
                         </motion.a>
 
                         {/* Mobile Menu Toggle */}
@@ -124,15 +126,17 @@ const Header = () => {
                             target="_blank"
                             onClick={() => setIsOpen(false)}
                             animate={{ 
-                                boxShadow: ["0px 0px 0px rgba(0, 212, 255, 0)", "0px 0px 20px rgba(0, 212, 255, 0.6)", "0px 0px 0px rgba(0, 212, 255, 0)"] 
+                                boxShadow: ["0px 0px 0px rgba(0, 255, 136, 0)", "0px 0px 20px rgba(0, 255, 136, 0.4)", "0px 0px 0px rgba(0, 255, 136, 0)"] 
                             }}
                             transition={{ repeat: Infinity, duration: 2 }}
                             whileTap={{ scale: 0.95 }}
-                            className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-cyan-400 text-black font-bold uppercase tracking-wider overflow-hidden relative group border border-cyan-300 hover:brightness-110 transition-all"
+                            className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded bg-black/90 text-[#00ff88] text-sm font-mono font-bold tracking-widest relative group border border-[#00ff88]/40 hover:bg-[#00ff88] hover:text-black hover:border-[#00ff88] hover:shadow-[0_0_20px_rgba(0,255,136,0.8)] transition-all duration-300"
                         >
-                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-500 ease-in-out"></span>
-                            <span className="relative z-10">Download Resume</span>
-                            <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                            <span className="relative z-10 flex items-center">
+                                <span className="text-[#00ff88] group-hover:text-black mr-2">&gt;</span>
+                                DOWNLOAD_RESUME
+                                <span className="w-2 h-4 bg-[#00ff88] group-hover:bg-black inline-block ml-1 animate-pulse"></span>
+                            </span>
                         </motion.a>
                     </div>
                 </motion.div>
