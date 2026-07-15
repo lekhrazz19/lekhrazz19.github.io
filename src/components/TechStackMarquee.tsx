@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 
 const techs = [
-    "KALI LINUX", "BURP SUITE", "METASPLOIT", "PYTHON", "REACT",
-    "TYPESCRIPT", "WIRESHARK", "DOCKER", "NODE.JS", "RUST",
-    "GO", "BASH", "LINUX", "GIT"
+    "AI AUTOMATION", "PROMPT ENGINEERING", "AI AGENTS", "OWASP TOP 10", "VULNERABILITY ASSESSMENT", 
+    "THREAT DETECTION", "SIEM", "SPLUNK", "ELASTIC STACK", "SIGMA RULES", 
+    "MITRE ATT&CK", "BURP SUITE", "NMAP", "METASPLOIT", "OWASP ZAP", 
+    "DOCKER", "KALI LINUX", "PYTHON", "FLASK", "C++", "HTML/CSS"
 ];
 
 const TechStackMarquee = () => {

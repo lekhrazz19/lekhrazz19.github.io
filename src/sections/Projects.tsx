@@ -1,35 +1,47 @@
 const Projects = () => {
     const projects = [
         {
-            title: "Vulnerability Research & Reporting System",
-            period: "March 2026",
+            title: "Vulnerability Research & Reporting System (VRRS)",
+            period: "2026",
             description: "Developed an end-to-end framework to formalize the vulnerability research lifecycle. Built custom Python automation tools (scanners, fuzzers) and Docker-containerized labs to ethically discover and report vulnerabilities using CVSS-aligned documentation.",
             technologies: ["Python", "Docker", "CVSS", "Custom Tooling"],
-            highlights: ["Custom Python automation (scanners, payload generators)", "Docker-based vulnerable lab environments", "Professional CVSS v3.1 aligned reporting format", "Ethical disclosure and risk assessment workflows"],
+            highlights: [
+                "Built Docker-based vulnerability laboratories using DVWA and OWASP Juice Shop.",
+                "Developed Python-based scanners, fuzzers, and CVSS-oriented vulnerability reporting templates."
+            ],
             github: "https://github.com/lekhrazz19/Vulnerability-Research-Reporting-System"
         },
         {
-            title: "SOC-in-a-Box (Security Monitoring & Incident Response)",
-            period: "March 2026",
+            title: "SOC-in-a-Box — Security Monitoring Lab",
+            period: "2026",
             description: "Architected a practical Security Operations Center simulation combining log collection, detection engineering, and incident response playbooks. Engineered rules mapped to MITRE ATT&CK and created automated attack simulation scripts.",
             technologies: ["Elastic", "Splunk SPL", "Sigma", "Python"],
-            highlights: ["Multi-platform detection content (Sigma, Splunk, Elastic)", "Automated attack simulation and log ingestion via Python", "Comprehensive IR Playbooks (Ransomware, Phishing, Data Exfiltration)", "Mapped to MITRE ATT&CK techniques"],
+            highlights: [
+                "Simulated enterprise SOC pipelines for log ingestion, threat detection, and incident response.",
+                "Authored Sigma Rules, Splunk SPL queries, and Elastic detections mapped to MITRE ATT&CK."
+            ],
             github: "https://github.com/lekhrazz19/Security-Monitoring-Incident-Response-Project"
         },
         {
-            title: "SecureTodo (AppSec Demonstration)",
-            period: "March 2026",
+            title: "SecureTodo — Secure Flask Application",
+            period: "2026",
             description: "Engineered a secure Python/Flask web application designed specifically to defend against the OWASP Top 10 vulnerabilities. Implemented secure authentication, robust data protection, and hardened browser security headers.",
             technologies: ["Python", "Flask", "SQLite", "AppSec"],
-            highlights: ["pbkdf2:sha256 password hashing with salting", "Anti-SQL Injection via Flask-SQLAlchemy ORM", "Strict Jinja2 XSS neutralization and auto-escaping", "Secure session management (HttpOnly, SameSite=Lax)"],
+            highlights: [
+                "Built a secure Flask application hardened against OWASP Top 10 vulnerabilities.",
+                "Implemented PBKDF2 password hashing, secure session management, SQL injection protection, and XSS mitigation."
+            ],
             github: "https://github.com/lekhrazz19/Secure-ToDo-App"
         },
         {
-            title: "Cybersecurity Homelab",
-            period: "2024 - Present",
+            title: "Cybersecurity Homelab — Attack & Defense Lab",
+            period: "2024",
             description: "A self-hosted virtualized penetration testing environment designed to simulate real-world attack scenarios. Serves as a sandbox for testing vulnerable applications and analyzing malware behavior safely.",
-            technologies: ["Kali Linux", "DVWA", "Burp Suite", "Metasploit", "VirtualBox"],
-            highlights: ["SQL Injection exploitation", "XSS Attack vectors", "Authentication Bypass techniques", "Network traffic analysis"],
+            technologies: ["Docker", "Kali Linux", "Ubuntu Server", "DVWA", "OWASP Juice Shop", "Burp Suite", "Nmap", "Metasploit"],
+            highlights: [
+                "Built a Kali Linux vs Ubuntu Server attack-defense laboratory using Docker, DVWA, and OWASP Juice Shop.",
+                "Conducted penetration testing using Burp Suite, Nmap, and Metasploit while documenting findings in professional reports."
+            ],
             github: "https://github.com/lekhrazz19/homelab"
         }
     ];

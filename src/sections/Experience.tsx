@@ -1,36 +1,43 @@
 const Experience = () => {
     const experiences = [
         {
+            company: "Bharat AI Vyapari",
+            role: "AI Automation Intern",
+            period: "Apr 2026 – Jun 2026",
+            location: "Bhilai, India",
+            points: [
+                "Designed AI-powered workflow automation solutions for business process optimization across multiple operational use cases.",
+                "Developed prompt engineering strategies and evaluated AI tools to improve automation quality and workflow efficiency.",
+                "Conducted automation system testing, identified workflow bottlenecks, and contributed to scalable AI-driven business automation initiatives."
+            ]
+        },
+        {
             company: "Cryptonic Area",
-            role: "Security Intern",
-            period: "Feb 2026 - Mar 2026",
+            role: "Cyber Security Intern",
+            period: "Feb 2026 – Mar 2026",
             location: "Remote",
             points: [
-                "Developed a Vulnerability Research & Reporting System (VRRS): Built custom Python automation tools (scanners, fuzzers) and Docker-containerized labs to ethically discover and report vulnerabilities using CVSS-aligned documentation.",
-                "Architected SOC-in-a-Box (Security Monitoring & IR): Created detection rules (Sigma, Splunk SPL), automated attack simulations via Python, and designed Incident Response playbooks mapping to MITRE ATT&CK techniques.",
-                "Engineered SecureTodo (AppSec): A secure Python/Flask web application defending against OWASP Top 10 vulnerabilities, featuring pbkdf2 password hashing, anti-SQLi ORM query structuring, and XSS neutralization."
+                "Developed SOC-style security tooling and automated reconnaissance workflows using Python and offensive security techniques.",
+                "Performed vulnerability assessments against intentionally vulnerable applications aligned with OWASP Top 10 methodologies."
             ]
         },
         {
             company: "Bugcrowd",
             role: "Security Researcher",
-            period: "Jun 2025 - Present",
+            period: "Jun 2025 – Present",
             location: "Remote",
             points: [
-                "Conducting web application security testing using Burp Suite and manual techniques.",
-                "Identifying and reporting OWASP Top 10 vulnerabilities with actionable remediation steps.",
-                "Participating in responsible disclosure programs to secure public infrastructure."
+                "Conducted manual web application penetration testing across bug bounty programs.",
+                "Reported security vulnerabilities with remediation recommendations following responsible disclosure practices."
             ]
         },
         {
-            company: "HackerHub8",
+            company: "HackerHub8 Company LLP",
             role: "Cybersecurity Volunteer",
-            period: "Oct 2025 - Present",
+            period: "Oct 2025 – Present",
             location: "India",
             points: [
-                "Organizing cybersecurity awareness programs for local communities.",
-                "Collaborating on vulnerability analysis and penetration testing workflows.",
-                "Mentoring students in basic security concepts and ethical hacking."
+                "Supported vulnerability analysis, security awareness initiatives, and cybersecurity community activities."
             ]
         }
     ];

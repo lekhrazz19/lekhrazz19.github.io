@@ -1,6 +1,22 @@
 const Certifications = () => {
     const certifications = [
         {
+            name: "Internship Completion Certificate — AI Automation Intern",
+            issuer: "Bharat AI Vyapari",
+            status: "Completed",
+            icon: "🤖",
+            color: "#10B981",
+            link: null
+        },
+        {
+            name: "Cyber Security Internship",
+            issuer: "Cryptonic Area",
+            status: "Completed",
+            icon: "🛡️",
+            color: "#EF4444",
+            link: null
+        },
+        {
             name: "ISO 27001 Foundation",
             issuer: "Information Security",
             status: "Completed",
@@ -12,7 +28,7 @@ const Certifications = () => {
             name: "Cybersecurity Fundamentals",
             issuer: "IBM",
             status: "Completed",
-            icon: "🛡️",
+            icon: "💻",
             color: "#054ADA",
             link: null
         },

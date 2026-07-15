@@ -58,22 +58,23 @@ const InteractiveTerminal = () => {
                 );
                 break;
             case 'about':
-                output = "Cybersecurity enthusiast & Full Stack Developer. Passionate about securing digital infrastructures and building resilient systems.";
+                output = "AI Automation Intern & Cybersecurity Researcher based in India. Focused on web application security, threat detection, and AI-driven business process optimization.";
                 break;
             case 'projects':
                 output = (
                     <div className="flex flex-col gap-1">
-                        <a href="#projects" className="text-accent hover:underline">1. Vulnerability Scanner</a>
-                        <a href="#projects" className="text-accent hover:underline">2. Secure Chat App</a>
-                        <a href="#projects" className="text-accent hover:underline">3. Portfolio V4</a>
+                        <a href="#projects" className="text-accent hover:underline">1. VRRS (Vulnerability Research & Reporting System)</a>
+                        <a href="#projects" className="text-accent hover:underline">2. SOC-in-a-Box (Security Monitoring Lab)</a>
+                        <a href="#projects" className="text-accent hover:underline">3. SecureTodo (Flask Application Hardening)</a>
+                        <a href="#projects" className="text-accent hover:underline">4. Cybersecurity Homelab (Attack & Defense)</a>
                     </div>
                 );
                 break;
             case 'skills':
-                output = "Penetration Testing, Python, React, TypeScript, Node.js, Linux, Docker, AWS";
+                output = "AI Automation, Prompt Engineering, Pentesting (OWASP Top 10), Splunk, Elastic, Sigma Rules, MITRE ATT&CK, Docker, Python, Flask, C++";
                 break;
             case 'contact':
-                output = "Email: contact@lekhraj.dev | GitHub: @lekhrazz19";
+                output = "Email: singhlekhraj497@gmail.com | GitHub: @lekhrazz19 | LinkedIn: @lekhrazz19";
                 break;
             case 'clear':
                 setHistory([]);

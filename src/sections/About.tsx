@@ -45,16 +45,16 @@ const About = () => {
 
                         <div className="space-y-4 text-slate-300 leading-relaxed text-lg">
                             <p className="text-xl font-bold text-white mb-4">
-                                "Building tools. Breaking apps. Securing the web."
+                                "Automating workflows. Hardening systems. Securing the future."
                             </p>
                             <p>
-                                Hi, I’m <strong className="text-white">Lekhraj Singh</strong>, a Student and a Cybersecurity Researcher with a simple philosophy: <em>you can’t secure a system until you know exactly how to shatter it.</em>
+                                Hi, I’m <strong className="text-white">Lekhraj Singh</strong>, a Computer Engineering student (IoT, Cybersecurity & Blockchain Technology) and security researcher based in Bhilai, India.
                             </p>
                             <p>
-                                My journey began with simple curiosity—wondering how digital systems tick, and more importantly, why they stop ticking when I poke them. Today, I am specializing in <span className="text-accent">Web Application Security</span>, turning that curiosity into a career.
+                                I specialize in <span className="text-accent">AI Automation</span> and <span className="text-accent">Cybersecurity</span>. I design AI-powered workflows to optimize business processes and perform vulnerability research to protect digital ecosystems.
                             </p>
                             <p>
-                                Beyond breaking things, I believe in responsible disclosure and helping developers build resilient infrastructure. Whether it's hunting vulnerabilities or automating security workflows, I'm always ready for the next challenge.
+                                From building secure containerized environments and scripting custom scanners to mapping threat detection pipelines to MITRE ATT&CK, I focus on building resilient systems that stand up to modern offensive vectors.
                             </p>
                         </div>
 
@@ -62,9 +62,12 @@ const About = () => {
                         <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10 mt-8">
                             <div>
                                 <h4 className="text-accent font-mono text-sm mb-1">CURRENT FOCUS</h4>
-                                <p className="text-white font-bold">AI Security & Web Security</p>
+                                <p className="text-white font-bold">AI Automation & Web Security</p>
                             </div>
-
+                            <div>
+                                <h4 className="text-accent font-mono text-sm mb-1">EDUCATION</h4>
+                                <p className="text-white font-bold">B.Tech, SSTC Bhilai (2024–2028)</p>
+                            </div>
                         </div>
                     </div>
                 </div>

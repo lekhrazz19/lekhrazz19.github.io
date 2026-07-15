@@ -1,20 +1,28 @@
 const Skills = () => {
     const skillCategories = [
         {
-            title: "Application Security",
-            skills: ["OWASP Top 10", "Secure Coding", "Web Security", "API Security"],
+            title: "AI Automation",
+            skills: ["Workflow Automation", "Prompt Engineering", "Business Process Automation", "AI Agents", "AI Tool Research"],
         },
         {
-            title: "Penetration Testing",
-            skills: ["Vulnerability Assessment", "Reconnaissance", "Manual Testing", "Exploitation"],
+            title: "Cybersecurity",
+            skills: ["OWASP Top 10", "Vulnerability Assessment", "Web Penetration Testing", "Threat Detection"],
+        },
+        {
+            title: "Security Operations",
+            skills: ["SIEM", "Splunk", "Elastic Stack", "Sigma Rules", "MITRE ATT&CK", "Incident Response"],
         },
         {
             title: "Security Tools",
-            skills: ["Burp Suite", "Nmap", "Metasploit", "Kali Linux", "Wireshark"],
+            skills: ["Burp Suite", "Nmap", "Metasploit", "OWASP ZAP", "Gobuster", "Nikto"],
+        },
+        {
+            title: "Platforms",
+            skills: ["Docker", "Kali Linux", "Ubuntu Server", "DVWA", "OWASP Juice Shop"],
         },
         {
             title: "Programming",
-            skills: ["Python", "C/C++", "HTML/CSS", "JavaScript/TypeScript", "SQL"],
+            skills: ["Python", "Flask", "C", "C++", "HTML", "CSS"],
         }
     ];
 
@@ -26,11 +34,11 @@ const Skills = () => {
                         <span style={{ color: 'var(--color-accent)' }}>$</span> skills --list
                     </h2>
                     <p className="text-slate-400 max-w-2xl mx-auto">
-                        A toolkit honed through rigorous practice and continuous learning in the evolving landscape of cybersecurity.
+                        A toolkit honed through rigorous practice and continuous learning in the evolving landscapes of cybersecurity and AI.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 gsap-stagger">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 gsap-stagger">
                     {skillCategories.map((category, index) => (
                         <div
                             key={index}
