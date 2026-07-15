@@ -45,28 +45,36 @@ const About = () => {
 
                         <div className="space-y-4 text-slate-300 leading-relaxed text-lg">
                             <p className="text-xl font-bold text-white mb-4">
-                                "Automating workflows. Hardening systems. Securing the future."
+                                "Automating workflows. Hardening environments. Engineering secure systems."
                             </p>
                             <p>
-                                Hi, I’m <strong className="text-white">Lekhraj Singh</strong>, a Computer Engineering student (IoT, Cybersecurity & Blockchain Technology) and security researcher based in Bhilai, India.
+                                Hi, I’m <strong className="text-white">Lekhraj Singh</strong>, a B.Tech Computer Engineering student specializing in IoT, Cybersecurity, and Blockchain at Shri Shankaracharya Technical Campus.
                             </p>
                             <p>
-                                I specialize in <span className="text-accent">AI Automation</span> and <span className="text-accent">Cybersecurity</span>. I design AI-powered workflows to optimize business processes and perform vulnerability research to protect digital ecosystems.
+                                I bridge the gap between autonomous efficiency and security. My work focuses on designing AI-powered workflow automation solutions alongside performing penetration testing and detection engineering.
                             </p>
                             <p>
-                                From building secure containerized environments and scripting custom scanners to mapping threat detection pipelines to MITRE ATT&CK, I focus on building resilient systems that stand up to modern offensive vectors.
+                                With hands-on experience scripting custom reconnaissance tools, containerizing vulnerability labs, and writing detection rules mapped to MITRE ATT&CK, I focus on building defensive systems that resist modern attack vectors.
                             </p>
                         </div>
 
                         {/* Stats / Quick Facts */}
-                        <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10 mt-8">
+                        <div className="grid grid-cols-2 gap-y-6 gap-x-4 pt-6 border-t border-white/10 mt-8">
                             <div>
-                                <h4 className="text-accent font-mono text-sm mb-1">CURRENT FOCUS</h4>
-                                <p className="text-white font-bold">AI Automation & Web Security</p>
+                                <h4 className="text-accent font-mono text-xs uppercase tracking-wider mb-1">Current Focus</h4>
+                                <p className="text-white font-semibold text-base">AI Automation & AppSec</p>
                             </div>
                             <div>
-                                <h4 className="text-accent font-mono text-sm mb-1">EDUCATION</h4>
-                                <p className="text-white font-bold">B.Tech, SSTC Bhilai (2024–2028)</p>
+                                <h4 className="text-accent font-mono text-xs uppercase tracking-wider mb-1">Education</h4>
+                                <p className="text-white font-semibold text-base">B.Tech Computer Engineering</p>
+                            </div>
+                            <div>
+                                <h4 className="text-accent font-mono text-xs uppercase tracking-wider mb-1">Primary Toolkit</h4>
+                                <p className="text-white font-semibold text-base">Python, Docker, Splunk, Elastic</p>
+                            </div>
+                            <div>
+                                <h4 className="text-accent font-mono text-xs uppercase tracking-wider mb-1">Specialization</h4>
+                                <p className="text-white font-semibold text-base">IoT, Cyber & Blockchain</p>
                             </div>
                         </div>
                     </div>
