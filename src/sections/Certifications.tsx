@@ -9,7 +9,6 @@ const Certifications = () => (
       {certifications.map((cert) => {
         const inner = (
           <>
-            <span className="cert-badge">{cert.icon}</span>
             <div className="cert-info">
               <h3>{cert.name}</h3>
               <p>{cert.issuer}</p>

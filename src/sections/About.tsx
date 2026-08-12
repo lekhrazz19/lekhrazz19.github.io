@@ -11,7 +11,9 @@ const About = () => (
       </div>
       <div className="about-text">
         <p className="about-statement">
-          "Automating workflows. Hardening environments. Engineering secure systems."
+          "<span className="statement-accent">Automating</span> workflows.{" "}
+          <span className="statement-accent">Hardening</span> environments.{" "}
+          <span className="statement-accent">Engineering</span> secure systems."
         </p>
         <p>
           Hi, I'm <strong>Lekhraj Singh</strong>, a B.Tech Computer Engineering

@@ -3,7 +3,7 @@ export const profile = {
   firstName: 'Lekhraj',
   lastName: 'Singh',
   handle: 'lekhrazz19',
-  role: 'AI Automation & Security Researcher',
+  role: 'AI Automation & Cybersecurity Enthusiast',
   tagline: 'Protecting your data from becoming Public Property.',
   email: 'singhlekhraj497@gmail.com',
 };
@@ -18,7 +18,6 @@ export const navLinks = [
 ];
 
 export const heroBadges = [
-  { label: 'Bugcrowd Researcher', href: 'https://bugcrowd.com/' },
   { label: 'ISO 27001 Foundation', href: 'https://www.skillfront.com/Badges/07913698924389' },
   { label: 'Certified Ethical Hacker', href: 'https://www.credly.com/badges/b38976c5-d363-4986-847f-c357bcdb8ad2/linked_in_profile' },
 ];
@@ -62,7 +61,7 @@ export const experiences = [
   {
     company: 'HackerHub8 Company LLP',
     role: 'Cybersecurity Volunteer',
-    period: 'Oct 2025 – Present',
+    period: 'Oct 2025 – Jun 2026',
     points: [
       'Supported vulnerability analysis, security awareness initiatives, and cybersecurity community activities.',
     ],
@@ -101,9 +100,9 @@ export const projects = [
 ];
 
 export const certifications = [
-  { name: 'ISO 27001 Foundation', issuer: 'Information Security', color: '#4285F4', icon: '🔐', link: 'https://www.skillfront.com/Badges/07913698924389' },
-  { name: 'Cybersecurity Fundamentals', issuer: 'IBM', color: '#054ADA', icon: '💻', link: null },
-  { name: 'Ethical Hacker', issuer: 'Cisco', color: '#049FD9', icon: '🎯', link: 'https://www.credly.com/badges/b38976c5-d363-4986-847f-c357bcdb8ad2/linked_in_profile' },
+  { name: 'ISO 27001 Foundation', issuer: 'Information Security', link: 'https://www.skillfront.com/Badges/07913698924389' },
+  { name: 'Cybersecurity Fundamentals', issuer: 'IBM', link: null },
+  { name: 'Ethical Hacker', issuer: 'Cisco', link: 'https://www.credly.com/badges/b38976c5-d363-4986-847f-c357bcdb8ad2/linked_in_profile' },
 ];
 
 export const socials = [
