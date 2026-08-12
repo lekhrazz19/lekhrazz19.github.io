@@ -1,73 +1,51 @@
 import { useEffect } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import Header from './components/Header';
+import AsciiDivider from './components/AsciiDivider';
 import Hero from './sections/Hero';
 import About from './sections/About';
-
-import Photos from './sections/Photos';
-import Skills from './sections/Skills';
-import Certifications from './sections/Certifications';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
+import Certifications from './sections/Certifications';
+import Skills from './sections/Skills';
+import Articles from './sections/Articles';
 import Contact from './sections/Contact';
-import ThreeJSBackground from './components/ThreeJSBackground';
-import InteractiveClickEffect from './components/InteractiveClickEffect';
-import InteractiveTerminal from './components/InteractiveTerminal';
 
 function App() {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray<HTMLElement>('.gsap-reveal').forEach((section) => {
-      gsap.fromTo(
-        section,
-        { autoAlpha: 0, y: 40 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 90%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    });
-
-
-
-    gsap.utils.toArray<HTMLElement>('.gsap-float').forEach((floatEl, index) => {
-      gsap.to(floatEl, {
-        y: -16,
-        duration: 6 + index,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-      });
-    });
+    const els = document.querySelectorAll('.fade-in');
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.1 }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
   }, []);
 
   return (
-    <div className="antialiased text-white relative">
-      <ThreeJSBackground />
-      <InteractiveClickEffect />
-      <InteractiveTerminal />
+    <>
       <Header />
-      <main className="relative z-10">
+      <main>
         <Hero />
+        <AsciiDivider />
         <About />
-
-        <Photos />
-        <Skills />
-        <Certifications />
+        <AsciiDivider />
         <Experience />
+        <AsciiDivider />
         <Projects />
+        <AsciiDivider />
+        <Certifications />
+        <AsciiDivider />
+        <Skills />
+        <AsciiDivider />
+        <Articles />
+        <AsciiDivider />
         <Contact />
       </main>
-    </div>
+    </>
   );
 }
 
