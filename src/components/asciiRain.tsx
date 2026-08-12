@@ -51,7 +51,7 @@ const AsciiRain = ({ onScore }: { onScore?: (n: number) => void }) => {
       };
     }
 
-    function resize() {
+    const resize = () => {
       w = window.innerWidth;
       h = window.innerHeight;
       canvas.width = Math.floor(w * dpr);
@@ -77,7 +77,7 @@ const AsciiRain = ({ onScore }: { onScore?: (n: number) => void }) => {
 
     const font = (px: number) => `${px}px "JetBrains Mono", monospace`;
 
-    function step(now: number) {
+    const step = (now: number) => {
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
       ctx.clearRect(0, 0, w, h);
