@@ -31,71 +31,63 @@ export const aboutQuickFacts = [
 
 export const experiences = [
   {
-    company: 'Bharat AI Vyapari',
-    role: 'AI Automation Intern',
-    period: 'Apr 2026 – Jun 2026',
-    points: [
-      'Designed AI-powered workflow automation solutions for business process optimization across multiple operational use cases.',
-      'Developed prompt engineering strategies and evaluated AI tools to improve automation quality and workflow efficiency.',
-      'Conducted automation system testing, identified workflow bottlenecks, and contributed to scalable AI-driven business automation initiatives.',
-    ],
-  },
-  {
-    company: 'Cryptonic Area',
-    role: 'Cyber Security Intern',
-    period: 'Feb 2026 – Mar 2026',
-    points: [
-      'Developed SOC-style security tooling and automated reconnaissance workflows using Python and offensive security techniques.',
-      'Performed vulnerability assessments against intentionally vulnerable applications aligned with OWASP Top 10 methodologies.',
-    ],
-  },
-  {
     company: 'Bugcrowd',
     role: 'Security Researcher',
     period: 'Jun 2025 – Present',
     points: [
-      'Conducted manual web application penetration testing across bug bounty programs.',
-      'Reported security vulnerabilities with remediation recommendations following responsible disclosure practices.',
+      'Conducted manual web application penetration testing across 4 bug bounty programs using Burp Suite and web security tools.',
+      'Identified and submitted 3 valid security vulnerabilities with remediation recommendations under responsible disclosure.',
     ],
   },
   {
-    company: 'HackerHub8 Company LLP',
-    role: 'Cybersecurity Volunteer',
-    period: 'Oct 2025 – Jun 2026',
+    company: 'Bharat AI Vyapari',
+    role: 'AI Automation Intern',
+    period: 'Apr 2026 – Jun 2026',
     points: [
-      'Supported vulnerability analysis, security awareness initiatives, and cybersecurity community activities.',
+      'Designed and implemented AI-powered workflow automations across 10+ business processes, reducing manual effort by 60–70%.',
+      'Developed prompt engineering strategies and evaluated AI tools across 5 use cases to improve automation quality and reliability.',
+      'Tested automation workflows, identified bottlenecks, and optimized solutions for scalable business operations.',
+    ],
+  },
+  {
+    company: 'Cryptonic Area',
+    role: 'Cyber Security Intern (Remote)',
+    period: 'Feb 2026 – Mar 2026',
+    points: [
+      'Developed SOC-style security tooling and automated reconnaissance workflows using Python and offensive security techniques.',
+      'Performed OWASP Top 10 vulnerability assessments against DVWA and OWASP Juice Shop, documenting 2–3 findings with remediation recommendations.',
     ],
   },
 ];
 
 export const projects = [
   {
+    title: 'N8N CVE Reports',
+    period: '2026',
+    description: 'Built a fully functional automated vulnerability intelligence pipeline retrieving CVEs from the NVD API and categorizing them by CVSS severity. Integrated OpenRouter LLMs for vulnerability impact analysis and mitigation recommendations, with automated daily Markdown report generation and GitHub archival.',
+    technologies: ['n8n', 'NVD API', 'OpenRouter LLMs', 'GitHub'],
+    github: 'https://github.com/lekhrazz19/N8N-CVE-REPORTS',
+  },
+  {
     title: 'Vulnerability Research & Reporting System (VRRS)',
     period: '2026',
-    description: 'End-to-end framework to formalize the vulnerability research lifecycle. Custom Python automation tools and Docker-containerized labs to ethically discover and report vulnerabilities using CVSS-aligned documentation.',
-    technologies: ['Python', 'Docker', 'CVSS', 'Custom Tooling'],
+    description: 'Built Docker-based vulnerability labs using DVWA and OWASP Juice Shop; developed Python scanners, fuzzers, and CVSS-oriented vulnerability reporting templates.',
+    technologies: ['Docker', 'Python', 'DVWA', 'OWASP Juice Shop', 'CVSS'],
     github: 'https://github.com/lekhrazz19/Vulnerability-Research-Reporting-System',
   },
   {
     title: 'SOC-in-a-Box — Security Monitoring Lab',
     period: '2026',
-    description: 'Practical Security Operations Center simulation combining log collection, detection engineering, and incident response playbooks mapped to MITRE ATT&CK.',
-    technologies: ['Elastic', 'Splunk SPL', 'Sigma', 'Python'],
+    description: 'Simulated enterprise SOC pipelines for log ingestion, threat detection, and incident response; authored Sigma rules, Splunk SPL queries, and Elastic detections mapped to MITRE ATT&CK.',
+    technologies: ['Splunk', 'Elastic', 'Sigma', 'MITRE ATT&CK'],
     github: 'https://github.com/lekhrazz19/Security-Monitoring-Incident-Response-Project',
-  },
-  {
-    title: 'SecureTodo — Secure Flask Application',
-    period: '2026',
-    description: 'Secure Python/Flask web application built to defend against the OWASP Top 10. Secure auth, PBKDF2 hashing, SQLi and XSS protections, hardened security headers.',
-    technologies: ['Python', 'Flask', 'SQLite', 'AppSec'],
-    github: 'https://github.com/lekhrazz19/Secure-ToDo-App',
   },
   {
     title: 'Cybersecurity Homelab — Attack & Defense Lab',
     period: '2024',
-    description: 'Self-hosted virtualized penetration testing environment simulating real-world attack scenarios. Sandbox for vulnerable apps and safe malware analysis.',
-    technologies: ['Docker', 'Kali Linux', 'DVWA', 'Burp Suite', 'Nmap', 'Metasploit'],
-    github: 'https://github.com/lekhrazz19/homelab',
+    description: 'Built a Kali Linux vs Ubuntu Server lab using Docker, DVWA, and OWASP Juice Shop; performed penetration testing using Burp Suite, Nmap, and Metasploit.',
+    technologies: ['Kali Linux', 'Docker', 'Burp Suite', 'Nmap', 'Metasploit'],
+    github: 'https://github.com/lekhrazz19/Homelab',
   },
 ];
 
@@ -114,10 +106,10 @@ export const socials = [
 ];
 
 export const skillCategories = [
-  { title: 'AI Automation', skills: ['Workflow Automation', 'Prompt Engineering', 'Business Process Automation', 'AI Agents', 'AI Tool Research'] },
-  { title: 'Cybersecurity', skills: ['OWASP Top 10', 'Vulnerability Assessment', 'Web Penetration Testing', 'Threat Detection'] },
-  { title: 'Security Operations', skills: ['SIEM', 'Splunk', 'Elastic Stack', 'Sigma Rules', 'MITRE ATT&CK', 'Incident Response'] },
+  { title: 'AI Automation', skills: ['Workflow Automation', 'Prompt Engineering', 'AI Agents', 'Business Process Automation'] },
+  { title: 'Cybersecurity', skills: ['OWASP Top 10', 'Vulnerability Assessment', 'Web Penetration Testing', 'Reconnaissance', 'CVSS Scoring', 'Responsible Disclosure'] },
+  { title: 'Security Operations', skills: ['Splunk', 'Elastic Stack', 'Sigma Rules', 'MITRE ATT&CK', 'Incident Response', 'Threat Detection'] },
   { title: 'Security Tools', skills: ['Burp Suite', 'Nmap', 'Metasploit', 'OWASP ZAP', 'Gobuster', 'Nikto'] },
-  { title: 'Platforms', skills: ['Docker', 'Kali Linux', 'Ubuntu Server', 'DVWA', 'OWASP Juice Shop'] },
+  { title: 'Platforms & Technologies', skills: ['Docker', 'Kali Linux', 'Ubuntu Server', 'DVWA', 'OWASP Juice Shop', 'NVD API', 'OpenRouter'] },
   { title: 'Programming', skills: ['Python', 'Flask', 'C', 'C++', 'HTML', 'CSS'] },
 ];
